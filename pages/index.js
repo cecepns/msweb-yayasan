@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 
-function Home({data}) {
+function Home() {
     return (
         <div className={styles.container}>
             <Head>
@@ -9,11 +9,6 @@ function Home({data}) {
                 <link rel="icon" href="/favicon.ico"/>
             </Head>
 
-            {data.map(i => {
-                return <div key={i.id}>
-                     <p>  {i.judul_berita} </p>
-                </div>
-            })}
             <main className={styles.main}>
                 <h1 className={styles.title}>
                     Cecep Welcome to
@@ -67,15 +62,6 @@ function Home({data}) {
     )
 }
 
-export async function getServerSideProps() {
-    // Fetch data from external API
-    const res = await fetch(`https://marifatussalaam.org/Rest_api`)
-    const data = await res.json()
 
-    // Pass data to the page via props
-    return {props: {
-            data
-        }}
-}
 
 export default Home
