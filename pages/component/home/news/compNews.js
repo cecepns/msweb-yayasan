@@ -2,7 +2,7 @@ import style from './news.module.scss'
 import React from 'react'
 
 function CompNews({judul, isi, img}) {
-    
+    console.log(img)
     // console.log(isi)
     return (
         // <div className="container mx-auto">

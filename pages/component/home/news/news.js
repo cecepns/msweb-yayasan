@@ -6,9 +6,7 @@ function News({news}) {
     return (
         <div className="flex bg-gray-200 px-12">
             <div className="flex flex-wrap justify-center lg:justify-between">
-                {news
-                // .reverse() .slice(0, 6)
-                    .sort((a, b) => {
+                {news.sort((a, b) => {
                     return new Date(b.tanggal_berita) - new Date(a.tanggal_berita);
                 })
                     .slice(0, 6)
@@ -19,7 +17,11 @@ function News({news}) {
                             isi = isi.substr(0, 100) + '[...]'
                         }
 
-                        return <CompNews key={item.id} judul={item.judul_berita} isi={isi} img={item.image_berita}/>
+                        return <CompNews
+                            key={item.id}
+                            judul={item.judul_berita}
+                            isi={isi}
+                            img={item.image}/>
 
                     })
 }
