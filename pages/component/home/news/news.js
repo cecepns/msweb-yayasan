@@ -19,7 +19,7 @@ function News({news}) {
                             isi = isi.substr(0, 100) + '[...]'
                         }
 
-                        return <CompNews key={item.id} judul={item.judul_berita} isi={isi}/>
+                        return <CompNews key={item.id} judul={item.judul_berita} isi={isi} img={item.image_berita}/>
 
                     })
 }
