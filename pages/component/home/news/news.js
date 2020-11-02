@@ -6,10 +6,7 @@ function News({news}) {
     return (
         <div className="flex bg-gray-200 px-12">
             <div className="flex flex-wrap justify-center lg:justify-between">
-                {news.sort((a, b) => {
-                    return new Date(b.tanggal_berita) - new Date(a.tanggal_berita);
-                })
-                    .slice(0, 6)
+                {news.slice(0, 6)
                     .map(item => {
 
                         let isi = item.isi_berita;
