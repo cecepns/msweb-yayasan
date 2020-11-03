@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import News from './component/news'
+import News from '../components/news'
 // import HomePage from './component/home/home'
 // import style from './component/news.module.scss'
 
