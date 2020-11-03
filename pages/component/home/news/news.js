@@ -6,8 +6,7 @@ function News({news}) {
     return (
         <div className="flex bg-gray-200 px-12">
             <div className="flex flex-wrap justify-center lg:justify-between">
-                {news.slice(0, 6)
-                    .map(item => {
+                {news.map(item => {
 
                         let isi = item.isi_berita;
                         if (isi.length > 100) {
