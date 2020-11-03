@@ -3,7 +3,8 @@ import Head from 'next/head'
 import style from './news.module.scss'
 
 function Home({data}) {
-    // console.log(data)
+    const news = data
+    console.log(news)
     return (
         <div>
             <Head>
@@ -13,7 +14,7 @@ function Home({data}) {
 
             <div className="flex bg-gray-200 px-12">
                 <div className="flex flex-wrap justify-center lg:justify-between">
-                    {data.map(item => {
+                    {data.slice(0,6).map(item => {
 
                         let isi = item.isi_berita;
                         if (isi.length > 100) {
