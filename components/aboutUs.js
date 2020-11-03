@@ -5,7 +5,7 @@ function About() {
             <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="lg:text-center">
                     <p
-                        className="text-base leading-6 text-indigo-600 font-semibold tracking-wide uppercase">School Of Huffadh</p>
+                        className="text-md leading-6 text-indigo-600 font-semibold tracking-wide uppercase">School Of Huffadh</p>
                     <h3
                         className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl sm:leading-10">
                         Ma'rifatussalaam Quranic Boarding School
@@ -42,7 +42,7 @@ function About() {
                                 <div className="ml-4">
                                     <h4 className="text-lg leading-6 font-medium text-gray-900">
                                         Kurikulum</h4>
-                                    <p className="mt-2 text-base leading-6 text-gray-500">
+                                    <p className="mt-2 text-md leading-6 text-gray-500">
                                         Ma'rifatussalaam memiliki kurikulum khas yang dirancang dan di persiapkan oleh
                                         tenaga kependidikan yang bermutu jenjang pendidikan menengah, sehingga dapat
                                         berkontribusi dalam mempersiapkan generasi yang tangguh di masa depan..
@@ -72,7 +72,7 @@ function About() {
                                 </div>
                                 <div className="ml-4">
                                     <h4 className="text-lg leading-6 font-medium text-gray-900">Lokasi Strategis</h4>
-                                    <p className="mt-2 text-base leading-6 text-gray-500">
+                                    <p className="mt-2 text-md leading-6 text-gray-500">
                                         erletak di jalan manyeti Subang-Kalijati dan dekat dengan pintu tol Subang
                                         menjadikan Ma'rifatussalaam Qur'anic Boarding School sangat mudah dijangkau.
 
@@ -102,7 +102,7 @@ function About() {
                                 </div>
                                 <div className="ml-4">
                                     <h4 className="text-lg leading-6 font-medium text-gray-900">Fasilitas</h4>
-                                    <p className="mt-2 text-base leading-6 text-gray-500">
+                                    <p className="mt-2 text-md leading-6 text-gray-500">
                                         Infrastruktur dan fasilitas yang memadai dengan investasi pendidikan yang
                                         terjangkau, pemisahan asrama dan kelas terpisah antara ikhwan dan akhwat.
                                     </p>
@@ -131,7 +131,7 @@ function About() {
                                 </div>
                                 <div className="ml-4">
                                     <h4 className="text-lg leading-6 font-medium text-gray-900">Lingkungan Heterogen</h4>
-                                    <p className="mt-2 text-base leading-6 text-gray-500">
+                                    <p className="mt-2 text-md leading-6 text-gray-500">
                                         lingkungan sosial yang heterogen dikarenakan santri SMP AL-Quran
                                         Ma'rifatussalaam berasal dari berbagai daerah di tanah air.
                                     </p>
