@@ -19,7 +19,7 @@ function Home({data}) {
     )
 }
 
-export async function getStaticProps(context) {
+export async function getServerSideProps(context) {
     const res = await fetch(`https://marifatussalaam.org/Rest_api`)
     const data = await res.json()
     return {
