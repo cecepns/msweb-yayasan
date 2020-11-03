@@ -1,6 +1,6 @@
 import Head from 'next/head'
 // import HomePage from './component/home/home'
-import style from './component/home/news/news.module.scss'
+import style from './news.module.scss'
 
 function Home({data}) {
     // console.log(data)
