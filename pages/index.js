@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import News from '../components/news'
+import AboutUs from '../components/aboutUs'
 // import HomePage from './component/home/home'
 // import style from './component/news.module.scss'
 
@@ -11,9 +12,11 @@ function Home({data}) {
                 <link rel="icon" href="/favicon.ico"/>
             </Head>
 
-            <div className="flex bg-gray-200 lg:px-12">
+            <div className="flex bg-gray-200 lg:px-12 py-5">
                     <News news={data}/>
             </div>
+
+            <AboutUs/>
 
         </div>
     )
