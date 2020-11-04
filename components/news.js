@@ -14,12 +14,39 @@ function News({news}) {
                     if (isi.length > 100) {
                         isi = isi.substr(0, 100) + '[...]'
                     }
+                    let datePart = item
+                            .tanggal_berita
+                            .match(/\d+/g),
+                        monthInd = [
+                            "",
+                            "Januari",
+                            "Februari",
+                            "Maret",
+                            "April",
+                            "Mei",
+                            "Juni",
+                            "Juli",
+                            "Agustus",
+                            "September",
+                            "Oktober",
+                            "November",
+                            "Desember"
+                        ],
+                        year = datePart[0],
+                        month = parseInt(datePart[1]),
+                        newMonth = monthInd[month],
+                        day = datePart[2];
+
+                    let ValueTgl = day + '/' + newMonth + '/' + year
 
                     return <div key={item.id} className={style.wrapper}>
                         <div className={style.imgWrap}>
                             <img
                                 src={`https://marifatussalaam.org/assets/berita/${item.image}`}
                                 alt="tidak di temukan"></img>
+                            <p className={style.date}>
+                                {ValueTgl}
+                            </p>
                         </div>
                         <div className={style.body}>
                             <p className={style.title}>

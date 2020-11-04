@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import News from '../components/news'
 import AboutUs from '../components/aboutUs'
+import Footer from '../components/footer'
 // import '../styles/Home.module.css'
 // import HomePage from './component/home/home'
 // import style from './component/news.module.scss'
@@ -18,6 +19,7 @@ function Home({data}) {
             </div>
 
             <AboutUs/>
+            <Footer/>
 
         </div>
     )
