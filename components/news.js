@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import style from './news.module.scss'
 
 function News({news}) {
@@ -58,6 +59,11 @@ function News({news}) {
                                 __html: isi
                             }}
                                 className={style.desc}/>
+
+                            <button className={style.btnDetails}>
+                                Lihat selengkapnya
+                                
+                            </button>
                         </div>
                     </div>
 

@@ -1,16 +1,13 @@
 import Head from 'next/head'
 import News from '../components/news'
-import AboutUs from '../components/aboutUs'
+import Excellence from '../components/excellence'
 import Footer from '../components/footer'
-// import '../styles/Home.module.css'
-// import HomePage from './component/home/home'
-// import style from './component/news.module.scss'
 
 function Home({data}) {
     return (
         <div>
             <Head>
-                <title>Ms News - Create Using Next JS</title>
+                <title>Ms News - Create Using Next JS </title>
                 <link rel="icon" href="/favicon.ico"/>
             </Head>
 
@@ -18,7 +15,7 @@ function Home({data}) {
                     <News news={data}/>
             </div>
 
-            <AboutUs/>
+            <Excellence/>
             <Footer/>
 
         </div>

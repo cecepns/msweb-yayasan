@@ -1,4 +1,4 @@
-function About() {
+function Excellence() {
     return (
 
         <div className="py-12 bg-white">
@@ -146,4 +146,4 @@ function About() {
     )
 }
 
-export default About
+export default Excellence
