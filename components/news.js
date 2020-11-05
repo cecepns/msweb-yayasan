@@ -3,9 +3,9 @@ function News({news}) {
     console.log(news)
     return (
         <>
-            <div className="lg:text-center">
+            <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 lg:text-center">
                 {/* <p
-                    className="text-md leading-6 text-indigo-600 font-semibold tracking-wide uppercase">SMP AL-Qur'an Ma'rifatussalaam Quranic Boarding School</p> */}
+                    className="text-md leading-6 text-indigo-600 font-semibold tracking-wide uppercase">Terdepan menjadi generasi berkarakter Qurani</p> */}
                 <h3
                     className="mt-2 text-3xl tracking-wide leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl sm:leading-10">
                     Berita Terbaru
