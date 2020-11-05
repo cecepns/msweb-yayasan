@@ -13,3 +13,23 @@ a {
 * {
   box-sizing: border-box;
 }
+
+.slick-next {
+  right: 0 !important;
+  background: white !important;
+  height: 50px !important;
+  width: 25px !important;
+}
+.slick-prev {
+  left: 0 !important;
+  z-index: 1 !important;
+  background: white !important;
+  height: 50px !important;
+  width: 25px !important;
+}
+.slick-next::before {
+  color: black !important;
+}
+.slick-prev::before {
+  color: black !important;
+}

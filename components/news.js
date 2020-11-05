@@ -1,6 +1,4 @@
-import Image from 'next/image'
 import style from './news.module.scss'
-
 function News({news}) {
     console.log(news)
     return (
@@ -62,7 +60,7 @@ function News({news}) {
 
                             <button className={style.btnDetails}>
                                 Lihat selengkapnya
-                                
+
                             </button>
                         </div>
                     </div>
