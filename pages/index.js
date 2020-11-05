@@ -12,7 +12,7 @@ function Home({data}) {
                 <link rel="icon" href="/favicon.ico"/>
             </Head>
             <Banner/>
-            <div className="flex bg-gray-200 lg:px-12 py-5">
+            <div className="bg-gray-200 lg:px-12 py-5">
                     <News news={data}/>
             </div>
 
