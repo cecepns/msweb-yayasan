@@ -9,7 +9,7 @@ function Home({data}) {
     return (
         <div>
             <Head>
-                <title>Ms News - Create Using Next JS
+                <title>SMP AL-QUR'AN MA'RIFATUSSALAAM (QURANIC BOARDING SCHOOL)
                 </title>
                 <link rel="icon" href="/favicon.ico"/>
 
