@@ -1,0 +1,10 @@
+.wrapper {
+    width: 100%;
+    background-color: white;
+    position: fixed;
+    z-index: 9999;
+    display: flex;
+    justify-content: space-around;
+    height: 60px;
+    box-shadow: 0 5px 10px rgba(0,0,0,.1);
+}
