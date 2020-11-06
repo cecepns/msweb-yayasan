@@ -10,7 +10,7 @@ function Excellence() {
                         className="mt-2 text-3xl tracking-wide leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl sm:leading-10">
                         Ma'rifatussalaam Quranic Boarding School
                     </h3>
-                    <p className="mt-4 max-w-2xl font-light text-lg leading-7 text-gray-500 lg:mx-auto">
+                    <p className="mt-4 max-w-2xl  font-light text-lg leading-7 text-gray-500 lg:mx-auto tracking-wide">
                         Ma'rifatussalaam Quranic Boarding School merupakan Sekolah Boarding yang terletak di
                         Subang, Jawa Barat. berikut alasan mengapa harus memilih Ma'rifatussalaam
                         Quranic Boarding School.
@@ -40,9 +40,9 @@ function Excellence() {
                                     </div>
                                 </div>
                                 <div className="ml-4">
-                                    <h4 className="text-lg leading-6 font-medium text-gray-900">
+                                    <h4 className="text-lg leading-6 tracking-wide font-medium text-gray-900">
                                         Kurikulum</h4>
-                                    <p className="mt-2 text-md leading-6 font-light text-gray-500">
+                                    <p className="mt-2 text-md leading-6 tracking-wide font-light text-gray-500">
                                         Ma'rifatussalaam memiliki kurikulum khas yang dirancang dan di persiapkan oleh
                                         tenaga kependidikan yang bermutu jenjang pendidikan menengah, sehingga dapat
                                         berkontribusi dalam mempersiapkan generasi yang tangguh di masa depan..
@@ -71,8 +71,8 @@ function Excellence() {
                                     </div>
                                 </div>
                                 <div className="ml-4">
-                                    <h4 className="text-lg leading-6 font-medium text-gray-900">Lokasi Strategis</h4>
-                                    <p className="mt-2 text-md leading-6 font-light text-gray-500">
+                                    <h4 className="text-lg leading-6 tracking-wide font-medium text-gray-900">Lokasi Strategis</h4>
+                                    <p className="mt-2 text-md leading-6 tracking-wide font-light text-gray-500">
                                         Terletak di jalan manyeti Subang-Kalijati dan dekat dengan pintu tol Subang
                                         menjadikan Ma'rifatussalaam Qur'anic Boarding School sangat mudah dijangkau.
 
@@ -101,8 +101,8 @@ function Excellence() {
                                     </div>
                                 </div>
                                 <div className="ml-4">
-                                    <h4 className="text-lg leading-6 font-medium text-gray-900">Fasilitas</h4>
-                                    <p className="mt-2 text-md leading-6 font-light text-gray-500">
+                                    <h4 className="text-lg leading-6 tracking-wide font-medium text-gray-900">Fasilitas</h4>
+                                    <p className="mt-2 text-md leading-6 tracking-wide font-light text-gray-500">
                                         Infrastruktur dan fasilitas yang memadai dengan investasi pendidikan yang
                                         terjangkau, pemisahan asrama dan kelas terpisah antara ikhwan dan akhwat.
                                     </p>
@@ -130,8 +130,8 @@ function Excellence() {
                                     </div>
                                 </div>
                                 <div className="ml-4">
-                                    <h4 className="text-lg leading-6 font-medium text-gray-900">Lingkungan Heterogen</h4>
-                                    <p className="mt-2 leading-6 font-light text-gray-500">
+                                    <h4 className="text-lg leading-6 tracking-wide font-medium text-gray-900">Lingkungan Heterogen</h4>
+                                    <p className="mt-2 leading-6 tracking-wide font-light text-gray-500">
                                         lingkungan sosial yang heterogen dikarenakan santri SMP AL-Quran
                                         Ma'rifatussalaam berasal dari berbagai daerah di tanah air.
                                     </p>

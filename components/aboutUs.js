@@ -5,7 +5,7 @@ function AboutUs() {
                 <div className="grid lg:grid-cols-2 gap-4 ">
                     <div>
                         <h3
-                            className="mb-4 text-3xl tracking-wide font-extrabold tracking-tight text-gray-900 sm:text-4xl lg:leading-relaxed sm:leading-10">
+                            className="mb-4 text-3xl tracking-wide font-extrabold text-gray-900 sm:text-4xl leading-9 lg:leading-relaxed">
                             Selamat Datang di <br></br> SMP Al-Qur'an Ma'rifatussalaam
                              Quranic Boarding School
                         </h3>
