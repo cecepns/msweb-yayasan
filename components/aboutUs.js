@@ -1,6 +1,6 @@
 function AboutUs() {
     return (
-        <div className="sm:py-8 lg:py-10 bg-white">
+        <div className="py-8 lg:py-12 bg-white">
             <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="grid lg:grid-cols-2 gap-4 ">
                     <div>
