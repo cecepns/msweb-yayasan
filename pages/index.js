@@ -3,6 +3,7 @@ import News from '../components/news'
 import Excellence from '../components/excellence'
 import Footer from '../components/footer'
 import Banner from '../components/banner'
+import AboutUs from '../components/aboutUs'
 
 function Home({data}) {
     return (
@@ -12,6 +13,7 @@ function Home({data}) {
                 <link rel="icon" href="/favicon.ico"/>
             </Head>
             <Banner/>
+            <AboutUs/>
             <div className="bg-gray-200 lg:px-12 py-5">
                     <News news={data}/>
             </div>
