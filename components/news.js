@@ -1,8 +1,11 @@
 import style from './news.module.scss'
+import {useRouter} from 'next/router'
+
 function News({news}) {
-    console.log(news)
+    // console.log(news)
+    const router = useRouter();
     return (
-        <>
+        <div>
             <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 lg:text-center">
                 {/* <p
                     className="text-md leading-6 text-indigo-600 font-semibold tracking-wide uppercase">Terdepan menjadi generasi berkarakter Qurani</p> */}
@@ -12,7 +15,8 @@ function News({news}) {
                 </h3>
                 <p
                     className="my-4 max-w-2xl font-light text-lg leading-7 text-gray-500 lg:mx-auto">
-                    Simak terus kegiatan santri SMP AL-Qur'an Ma'rifatussalaam Quranic Boarding School yang seru, inovatif dan menyenangkan.
+                    Simak terus kegiatan santri SMP AL-Qur'an Ma'rifatussalaam Quranic Boarding
+                    School yang seru, inovatif dan menyenangkan.
                 </p>
             </div>
             <div className="flex flex-wrap justify-center lg:justify-between">
@@ -71,7 +75,15 @@ function News({news}) {
                                 }}
                                     className={style.desc}/>
 
-                                <button className={style.btnDetails}>
+                                <button
+                                    className={style.btnDetails}
+                                    onClick={() => router.push({
+                                    pathname: `/post/${item.id}`,
+                                    as: `/post/hello`,
+                                    query: {
+                                        judul: item.judul_berita
+                                    }
+                                })}>
                                     Lihat selengkapnya
 
                                 </button>
@@ -81,7 +93,7 @@ function News({news}) {
                     })
 }
             </div>
-        </>
+        </div>
     )
 }
 
