@@ -33,7 +33,7 @@ function Home({data}) {
             </Head>
 
             {/* Website */}
-            <Navbar/>
+            {/* <Navbar/> */}
             <Banner/>
             <AboutUs/>
 
