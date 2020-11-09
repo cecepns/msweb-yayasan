@@ -1,7 +1,14 @@
+import Head from 'next/head'
+
 function News() {
-    return(
+    return (
         <div>
-            news page
+            <Head>
+                <title> News - SMP Al-Qur'an Ma'rifatussalaam Quranic Boarding School </title>
+            </Head>
+            <div>
+                news page
+            </div>
         </div>
     )
 }

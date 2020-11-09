@@ -5,6 +5,56 @@
     z-index: 9999;
     display: flex;
     justify-content: space-around;
+    align-items: center;
     height: 60px;
     box-shadow: 0 5px 10px rgba(0,0,0,.1);
+    padding: 0 3rem;
+    .logo {
+        width: 100%;
+    }
+    .menuWrapper {
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+
+    }
+    .menuItem {
+        padding: 0 1rem;
+    }
+
+    .toggle {
+        display: block;
+        cursor: pointer;
+    }
+    @media (min-width: 992px) {
+        .toggle {
+            display: none;
+        }
+    }
+    @media (max-width: 993px) {
+        .menuWrapper {
+            background: rgba(255,255,255,.8);
+            color: black;
+            position: fixed;
+            width: 50%;
+            height: 100%;
+            right: -50%;
+            top: 60px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            padding: 20px;
+            opacity: 0;
+            transition: 0.4s ease;
+        }
+        .menuWrapperActive {
+            right: 0;
+            opacity: 1;
+        }
+        .menuItem {
+            padding: 1rem;
+            font-size: 20px;
+        }
+    }
+
 }

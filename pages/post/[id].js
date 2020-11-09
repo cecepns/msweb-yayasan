@@ -47,8 +47,9 @@ function DetailNews({list}) {
                         }}></div>
                     </div>
                 })
-                : <div className="bg-white-300 mx-auto my-auto w-full h-full flex justify-center items-center fixed">
-                   loading...
+                : <div
+                    className="bg-white-300 mx-auto my-auto w-full h-full flex justify-center items-center fixed">
+                    loading...
                 </div>
 }
         </div>
