@@ -5,7 +5,7 @@ import {useState} from 'react'
 
 function Navbar() {
     const [toggle,
-        setToggle] = useState(false);
+        setToggle] = useState(true);
 
     const handleToggle = () => setToggle(!toggle);
     console.log(toggle)
