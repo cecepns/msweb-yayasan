@@ -7,10 +7,11 @@ function DetailNews({list}) {
 
     const router = useRouter();
     const id = router.query.id
-    
+
     // const [loading, setLoading] = useState(list)
 
-    const [data,setData] = useState(list)
+    const [data,
+        setData] = useState(list)
 
     useEffect(() => {
         async function detailNews() {
@@ -20,7 +21,7 @@ function DetailNews({list}) {
             setData(list)
         }
 
-        if(data.length === 0 ) {
+        if (data.length === 0) {
             detailNews();
         }
 
@@ -46,22 +47,22 @@ function DetailNews({list}) {
                         }}></div>
                     </div>
                 })
-                : <div>
-                    loading...
-                </div>}
+                : <div className="bg-white-300 mx-auto my-auto w-full h-full flex justify-center items-center fixed">
+                   loading...
+                </div>
+}
         </div>
     )
 }
 
-
 DetailNews.getInitialProps = async ctx => {
-    if(!ctx.req) {
-        return { list : [] }
+    if (!ctx.req) {
+        return {list: []}
     }
-        const id = ctx.query.id
-        const response = await fetch(`https://marifatussalaam.org/Rest_api?id=${id}`);
-        const list = await response.json();
-        return { list : list }
+    const id = ctx.query.id
+    const response = await fetch(`https://marifatussalaam.org/Rest_api?id=${id}`);
+    const list = await response.json();
+    return {list: list}
 }
 
 export default DetailNews
