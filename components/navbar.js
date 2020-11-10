@@ -6,7 +6,8 @@ import {useRouter} from 'next/router'
 
 function Navbar() {
     const router = useRouter();
-    console.log(router)
+    const pathName = router.pathname
+    console.log(pathName)
 
     const [toggle,
         setToggle] = useState(true);
@@ -40,7 +41,11 @@ function Navbar() {
                 : style.menuWrapper + " " + style.menuWrapperActive}>
                 {menu.map((item, index) => (
                     <Link key={index} href={item.path}>
-                        <a className={style.menuItem} onClick={handleToggle}>
+                        <a
+                            className={pathName === item.path
+                            ? style.menuItem + " " + style.menuItemActive
+                            : style.menuItem}
+                            onClick={handleToggle}>
                             {item.menuName}</a>
                     </Link>
                 ))}
