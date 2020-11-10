@@ -14,7 +14,7 @@ function News({news}) {
                     Berita Terbaru
                 </h3>
                 <p
-                    className="my-4 max-w-2xl font-light text-lg leading-7 text-gray-500 lg:mx-auto">
+                    className="my-4 max-w-2xl font-light text-lg leading-7 text-black-500 opacity-75 lg:mx-auto">
                     Simak terus kegiatan santri SMP AL-Qur'an Ma'rifatussalaam Quranic Boarding
                     School yang seru, inovatif dan menyenangkan.
                 </p>

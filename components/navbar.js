@@ -2,8 +2,12 @@ import style from './navbar.module.scss'
 import Link from 'next/link'
 import Image from 'next/image'
 import {useState} from 'react'
+import {useRouter} from 'next/router'
 
 function Navbar() {
+    const router = useRouter();
+    console.log(router)
+
     const [toggle,
         setToggle] = useState(true);
 
@@ -30,7 +34,10 @@ function Navbar() {
         <div className={style.wrapper}>
             <div className={style.logo}>Logo</div>
 
-            <div className={toggle ? style.menuWrapper : style.menuWrapper +" "+ style.menuWrapperActive}>
+            <div
+                className={toggle
+                ? style.menuWrapper
+                : style.menuWrapper + " " + style.menuWrapperActive}>
                 {menu.map((item, index) => (
                     <Link key={index} href={item.path}>
                         <a className={style.menuItem} onClick={handleToggle}>
@@ -38,13 +45,13 @@ function Navbar() {
                     </Link>
                 ))}
             </div>
-                <Image
-                    src="/arrow.svg"
-                    alt="Picture of the author"
-                    width={50}
-                    height={50}
-                    className={style.toggle}
-                    onClick={handleToggle}/>
+            <Image
+                src="/arrow.svg"
+                alt="Picture of the author"
+                width={50}
+                height={50}
+                className={style.toggle}
+                onClick={handleToggle}/>
         </div>
     )
 }
