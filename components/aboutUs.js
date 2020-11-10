@@ -12,7 +12,7 @@ function AboutUs() {
                         </h3>
 
                         <p
-                            className="mt-2 text-lg leading-relaxed tracking-wider font-light text-gray-500">
+                            className="mt-2 text-lg leading-6 tracking-wider font-light text-gray-500">
                             &nbsp; &nbsp; <span className="font-extrabold"> SMP Al-Qur'an Ma'rifatussalaam Qur'anic Boarding School</span> berlokasi di Jl.
                             Manyeti No.6 RT 05/01 Kp.Cikadu Desa Manyeti, Kec. Dawuan, Kab. Subang, Provinsi
                             Jawa Barat. Ma'rifatussalaam memiliki kurikulum khas yang dirancang dan di
@@ -23,7 +23,7 @@ function AboutUs() {
                         </p>
 
                         <p
-                            className="mt-4 text-lg leading-relaxed tracking-wider font-light text-gray-500">
+                            className="mt-4 text-lg leading-6 tracking-wider font-light text-gray-500">
                             &nbsp; &nbsp; <span className="font-extrabold"> SMP Al-Qur’an Ma’rifatussalaam Quranic Boarding School </span> merupakan program unggulan Pesantren
                             Tahfizhul Qur’an Ma’rifatussalaam dengan target 3 tahun hafal 20 juz. Adapun
                             kurikulum yang diterapkan adalah kurikulum nasional dan kurikulum kepesantrenan
