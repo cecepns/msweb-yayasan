@@ -78,12 +78,13 @@ function News({news}) {
                                 <button
                                     className={style.btnDetails}
                                     onClick={() => router.push({
-                                    pathname: `/post/${item.id}`,
-                                    as: `/post/hello`,
-                                    query: {
-                                        judul: item.judul_berita
-                                    }
-                                })}>
+                                        asPath : 'post/id',
+                                        pathname : 'post/[id]',
+                                        query : {
+                                                id : item.id,
+                                                title : item.judul_berita
+                                                }
+                                    })}>
                                     Lihat selengkapnya
 
                                 </button>

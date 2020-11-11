@@ -19,13 +19,14 @@
 
     }
     .menuItem {
+        letter-spacing: 1px;
         padding: 0 1rem;
         position: relative;
         &:before {
             content: "";
             transition: all ease 0.5s;
             position: absolute;
-            background: #c84192;
+            background: #e91e63;
             transform: scaleX(0);
         }
     }
@@ -55,6 +56,7 @@
 
         }
         .menuItemActive {
+            color: #e91e63;
             &:before {
                 transform: scaleX(1);
             }
@@ -95,6 +97,7 @@
         }
     }
     .menuItemActive {
+        color: #e91e63 ;
         &:before {
             transform: scaleX(1);
         }

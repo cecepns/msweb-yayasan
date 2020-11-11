@@ -9,9 +9,8 @@ function Navbar() {
     const pathName = router.pathname
     console.log(pathName)
 
-    const [toggle,
-        setToggle] = useState(true);
-
+    const [toggle, setToggle] = useState(true);
+    
     const handleToggle = () => setToggle(!toggle);
     console.log(toggle)
 

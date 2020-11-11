@@ -57,6 +57,7 @@ function DetailNews({list}) {
 }
 
 DetailNews.getInitialProps = async ctx => {
+    console.log(ctx);
     if (!ctx.req) {
         return {list: []}
     }
