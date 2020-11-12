@@ -2,11 +2,11 @@ import style from './news.module.scss'
 import {useRouter} from 'next/router'
 
 function News({news}) {
-    
+
     const router = useRouter();
-    
+
     return (
-        <div>
+        <div className="bg-gray-200 lg:px-12 py-5">
             <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 lg:text-center">
                 {/* <p
                     className="text-md leading-6 text-indigo-600 font-semibold tracking-wide uppercase">Terdepan menjadi generasi berkarakter Qurani</p> */}
@@ -79,13 +79,13 @@ function News({news}) {
                                 <button
                                     className={style.btnDetails}
                                     onClick={() => router.push({
-                                        asPath : 'post/id',
-                                        pathname : 'post/[id]',
-                                        query : {
-                                                id : item.id,
-                                                title : item.judul_berita
-                                                }
-                                    })}>
+                                    asPath: 'post/id',
+                                    pathname: 'post/[id]',
+                                    query: {
+                                        id: item.id,
+                                        title: item.judul_berita
+                                    }
+                                })}>
                                     Lihat selengkapnya
 
                                 </button>
@@ -98,5 +98,7 @@ function News({news}) {
         </div>
     )
 }
+
+
 
 export default News

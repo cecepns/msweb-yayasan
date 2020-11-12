@@ -6,24 +6,7 @@ import Banner from '../components/banner'
 import AboutUs from '../components/aboutUs'
 import {useState, useEffect} from 'react'
 
-
 function Home({data}) {
-
-    const [news, setNews] = useState(data)
-    const [loading, setLoading] = useState(false)
-
-    
-    useEffect(() => {
-        function detailNews() {
-            setLoading(true)
-        }
-
-        if (news.length > 0) {
-            detailNews();
-        } 
-
-    }, [])
-
 
     return (
         <div>
@@ -53,20 +36,7 @@ function Home({data}) {
             <Banner/>
             <AboutUs/>
 
-            {loading ? 
-            
-             <div className="bg-gray-200 lg:px-12 py-5">
-                <News news={data}/>
-             </div>
-
-            :   <div
-                    className="bg-white-300 mx-auto my-auto w-full h-full flex justify-center items-center fixed">
-                    loading...
-                </div> 
-            
-            }
-           
-
+            <News news={data}/>
             <Excellence/>
             <Footer/>
 
