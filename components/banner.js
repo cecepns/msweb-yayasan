@@ -19,18 +19,18 @@ function Banner() {
         // <div className="">
         <div className={style.container}>
             <Slider {...settings}>
-                        {/* <div><img
+                        <div><img
                             src="https://psb.marifatussalaam.org/assets/frontend/image/header2.png"
                             alt="none"/></div>
                         <div><img
                             src="https://psb.marifatussalaam.org/assets/frontend/image/header3.png"
-                            alt="none"/></div> */}
-                        <div><img
+                            alt="none"/></div>
+                        {/* <div><img
                             src="https://zamzamsyifa.sch.id/wp-content/uploads/2020/09/Zamzam-Syifa-Boarding-School-E.jpg"
                             alt="none"/></div>
                         <div><img
                             src="https://zamzamsyifa.sch.id/wp-content/uploads/2020/09/Zamzam-Syifa-Boarding-School-B.jpg"
-                            alt="none"/></div>
+                            alt="none"/></div> */}
 
                     </Slider>
         </div>
