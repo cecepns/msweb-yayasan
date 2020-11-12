@@ -32,8 +32,8 @@ function Navbar() {
 
     return (
         <div className={style.wrapper}>
-            <div className={style.logo}>
-                <Logo src="/ms.png" alt="Picture of the author" width={250} height={50}/>
+            <div className={style.logoWrapper}>
+                <Logo src="/ms.png" alt="Picture of the author" width={250} height={50} className={style.logo}/>
             </div>
 
             <div
