@@ -9,6 +9,7 @@
     height: 60px;
     box-shadow: 0 5px 10px rgba(0,0,0,.1);
     padding: 0 3rem;
+
     .logo {
         width: 100%;
     }
@@ -32,9 +33,32 @@
     }
 
     .toggle {
-        display: block;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
         cursor: pointer;
+        span {
+            background-color: black;
+            width: 2em;
+            height: 0.2em;
+            margin: 0.26em 0;
+            display: block;
+            transition: all 0.4s ease;
+            transform-origin: 0 0;
+        }
+
     }
+    .toggleActive span:nth-child(1) {
+        transform: rotate(45deg) translate(1px, -1px);
+    }
+    .toggleActive span:nth-child(2) {
+        Transform: scaleX(0);
+    }
+    .toggleActive span:nth-child(3) {
+        transform: rotate(-45deg) translate(1px, 0);
+    }
+
+    
     @media (min-width: 992px) {
         .toggle {
             display: none;
@@ -97,10 +121,18 @@
         }
     }
     .menuItemActive {
-        color: #e91e63 ;
+        color: #e91e63;
         &:before {
             transform: scaleX(1);
         }
     }
 
+}
+@media (max-width: 567px) {
+    .wrapper {
+        padding: 0 1rem;
+    }
+    .logo {
+        width: 220px;
+    }
 }

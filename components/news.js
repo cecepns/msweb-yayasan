@@ -2,8 +2,9 @@ import style from './news.module.scss'
 import {useRouter} from 'next/router'
 
 function News({news}) {
-    // console.log(news)
+    
     const router = useRouter();
+    
     return (
         <div>
             <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 lg:text-center">

@@ -4,8 +4,27 @@ import Excellence from '../components/excellence'
 import Footer from '../components/footer'
 import Banner from '../components/banner'
 import AboutUs from '../components/aboutUs'
+import {useState, useEffect} from 'react'
+
 
 function Home({data}) {
+
+    const [news, setNews] = useState(data)
+    const [loading, setLoading] = useState(false)
+
+    
+    useEffect(() => {
+        function detailNews() {
+            setLoading(true)
+        }
+
+        if (news.length > 0) {
+            detailNews();
+        } 
+
+    }, [])
+
+
     return (
         <div>
             <Head>
@@ -31,14 +50,22 @@ function Home({data}) {
                     content="SMP AL-QUR'AN MA'RIFATUSSALAAM BOARDING SCHOOL SUBANG"/>
             </Head>
 
-            {/* Website */}
-            {/* <Navbar/> */}
             <Banner/>
             <AboutUs/>
 
-            <div className="bg-gray-200 lg:px-12 py-5">
+            {loading ? 
+            
+             <div className="bg-gray-200 lg:px-12 py-5">
                 <News news={data}/>
-            </div>
+             </div>
+
+            :   <div
+                    className="bg-white-300 mx-auto my-auto w-full h-full flex justify-center items-center fixed">
+                    loading...
+                </div> 
+            
+            }
+           
 
             <Excellence/>
             <Footer/>

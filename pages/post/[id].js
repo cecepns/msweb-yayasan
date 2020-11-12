@@ -8,7 +8,7 @@ function DetailNews({list}) {
     const router = useRouter();
     const id = router.query.id
 
-    // const [loading, setLoading] = useState(list)
+    const [loading, setLoading] = useState(false)
 
     const [data,
         setData] = useState(list)
@@ -17,12 +17,16 @@ function DetailNews({list}) {
         async function detailNews() {
             const response = await fetch(`https://marifatussalaam.org/Rest_api?id=${id}`);
             const list = await response.json();
-            // setLoading(!loading)
-            setData(list)
+            setData(list);
+            setLoading(true)
         }
 
         if (data.length === 0) {
             detailNews();
+        } else {
+            setTimeout(() => {
+             setLoading(true)
+            }, 1000);
         }
 
     }, [data])
@@ -32,7 +36,7 @@ function DetailNews({list}) {
     return (
         <div>
 
-            {data.length > 0
+            {loading
                 ? data.map(i => {
                     return <div key={i.id}>
                         <p>
