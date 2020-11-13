@@ -4,8 +4,20 @@ import Image from 'next/image'
 import Logo from 'next/image'
 import {useState} from 'react'
 import {useRouter} from 'next/router'
+// import NProgress from 'nprogress'
+// import Router from 'next/router'
+// import Head from 'next/head'
+
+// Router.onRouteChangeStart = url => {
+//     console.log(url);
+//     NProgress.start();
+// }
+
+// Router.onRouteChangeComplete = () => NProgress.done();
+// Router.onRouteChangeError = () => NProgress.done();
 
 function Navbar() {
+
     const router = useRouter();
     const pathName = router.pathname
 
@@ -20,7 +32,7 @@ function Navbar() {
             menuName: 'Home'
         }, {
             path: '/news',
-            menuName: 'News'
+            menuName: 'Berita'
         }, {
             path: '/program',
             menuName: 'Program'
@@ -31,9 +43,15 @@ function Navbar() {
     ];
 
     return (
+
         <div className={style.wrapper}>
             <div className={style.logoWrapper}>
-                <Logo src="/ms.png" alt="Picture of the author" width={250} height={50} className={style.logo}/>
+                <Logo
+                    src="/ms.png"
+                    alt="Picture of the author"
+                    width={250}
+                    height={50}
+                    className={style.logo}/>
             </div>
 
             <div
@@ -58,7 +76,7 @@ function Navbar() {
                         <span></span>
                         <span></span>
                     </div>
-                : <div className={style.toggle +" "+ style.toggleActive} onClick={handleToggle}>
+                : <div className={style.toggle + " " + style.toggleActive} onClick={handleToggle}>
                     <span></span>
                     <span></span>
                     <span></span>

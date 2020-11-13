@@ -4,7 +4,6 @@ import Excellence from '../components/excellence'
 import Footer from '../components/footer'
 import Banner from '../components/banner'
 import AboutUs from '../components/aboutUs'
-import {useState, useEffect} from 'react'
 
 function Home({data}) {
 
