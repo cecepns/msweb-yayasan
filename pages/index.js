@@ -17,7 +17,6 @@ function Home({data}) {
                     name="description"
                     content="Ma'rifatussalaam Qur'anic Boarding School adalah sekolang Boarding School terbaik di subang"></meta>
 
-                {/* meta tag */}
                 <meta property="og:locale" content="en_US"/>
                 <meta property="og:type" content="website"/>
                 <meta
@@ -36,8 +35,7 @@ function Home({data}) {
             <AboutUs/>
 
             <News news={data}/>
-            <Excellence/>
-            <Footer/>
+            {/* <Excellence/> */}
 
         </div>
     )

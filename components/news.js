@@ -1,5 +1,6 @@
 import style from './news.module.scss'
 import {useRouter} from 'next/router'
+import Link from 'next/link'
 
 function News({news}) {
 
@@ -76,14 +77,14 @@ function News({news}) {
                                 }}
                                     className={style.desc}/>
 
+                                {/* <Link href="post/[id]" */}
                                 <button
                                     className={style.btnDetails}
                                     onClick={() => router.push({
                                     asPath: 'post/id',
-                                    pathname: 'post/[id]',
+                                    pathname: `post/${item.id}`,
                                     query: {
-                                        id: item.id,
-                                        title: item.judul_berita
+                                        slug: item.judul_berita.split(" ").join("-")
                                     }
                                 })}>
                                     Lihat selengkapnya

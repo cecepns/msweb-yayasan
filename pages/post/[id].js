@@ -8,7 +8,8 @@ function DetailNews({list}) {
     const router = useRouter();
     const id = router.query.id
 
-    const [loading, setLoading] = useState(false)
+    const [loading,
+        setLoading] = useState(false)
 
     const [data,
         setData] = useState(list)
@@ -25,43 +26,57 @@ function DetailNews({list}) {
             detailNews();
         } else {
             setTimeout(() => {
-             setLoading(true)
+                setLoading(true)
             }, 1000);
         }
 
-    }, [data])
+    }, [])
 
-    console.log(list)
+    let content = null
+
+    if (loading) {
+        if (data.length > 0) {
+            content = 
+                    <div className="container mx-auto mt-20">
+                    {data.map(i => {
+                        return <div key={i.id}>
+                            <div>
+                            <img
+                                    src={`https://marifatussalaam.org/assets/berita/${i.image}`}
+                                    alt="tidak di temukan"></img>
+                            </div>
+                            <p>
+                                {i.judul_berita}
+                            </p>
+                            <div
+                                dangerouslySetInnerHTML={{
+                                __html: i.isi_berita
+                            }}></div>
+                        </div>
+                    })
+                }
+                    </div>
+        } else {
+            content = <div
+                className="bg-white-300 mx-auto my-auto w-full h-full flex justify-center items-center fixed">
+                Mohon maaf, berita tidak di temukan.
+            </div>
+        }
+    } else {
+        content = <div
+            className="bg-white-300 mx-auto my-auto w-full h-full flex justify-center items-center fixed">
+            loading...
+        </div>
+    }
 
     return (
-        <div>
-
-            {loading
-                ? data.map(i => {
-                    return <div key={i.id}>
-                        <p>
-                            {i.image}
-                        </p>
-                        <p>
-                            {i.judul_berita}
-                        </p>
-                        <div
-                            dangerouslySetInnerHTML={{
-                            __html: i.isi_berita
-                        }}></div>
-                    </div>
-                })
-                : <div
-                    className="bg-white-300 mx-auto my-auto w-full h-full flex justify-center items-center fixed">
-                    loading...
-                </div>
-}
-        </div>
+        <>
+            {content}
+        </>
     )
 }
 
 DetailNews.getInitialProps = async ctx => {
-    console.log(ctx);
     if (!ctx.req) {
         return {list: []}
     }

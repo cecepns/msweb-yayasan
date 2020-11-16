@@ -1,20 +1,8 @@
 import style from './navbar.module.scss'
 import Link from 'next/link'
-import Image from 'next/image'
 import Logo from 'next/image'
 import {useState} from 'react'
 import {useRouter} from 'next/router'
-// import NProgress from 'nprogress'
-// import Router from 'next/router'
-// import Head from 'next/head'
-
-// Router.onRouteChangeStart = url => {
-//     console.log(url);
-//     NProgress.start();
-// }
-
-// Router.onRouteChangeComplete = () => NProgress.done();
-// Router.onRouteChangeError = () => NProgress.done();
 
 function Navbar() {
 
@@ -82,13 +70,6 @@ function Navbar() {
                     <span></span>
                 </div>}
 
-            {/* <Image
-                src="/arrow.svg"
-                alt="Picture of the author"
-                width={50}
-                height={50}
-                className={style.toggle}
-                onClick={handleToggle}/> */}
         </div>
     )
 }
