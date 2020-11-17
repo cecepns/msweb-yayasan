@@ -22,8 +22,8 @@ function Navbar() {
             path: '/news',
             menuName: 'Berita'
         }, {
-            path: '/program',
-            menuName: 'Program'
+            path: '/ekstrakurikuler',
+            menuName: 'ekstrakurikuler'
         }, {
             path: '/kontak',
             menuName: 'Kontak'

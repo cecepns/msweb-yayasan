@@ -35,7 +35,7 @@ function Home({posts}) {
             <AboutUs/>
 
             <News news={posts}/>
-            {/* <Excellence/> */}
+            <Excellence/>
 
         </div>
     )
