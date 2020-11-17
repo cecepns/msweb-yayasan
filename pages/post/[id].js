@@ -16,9 +16,9 @@ function DetailNews({list}) {
 
     useEffect(() => {
         async function detailNews() {
-            const response = await fetch(`https://marifatussalaam.org/Rest_api?id=${id}`);
+            const response = await fetch(`https://public-api.wordpress.com/rest/v1.1/sites/msweb749567184.wordpress.com/posts/slug:${id}`);
             const list = await response.json();
-            setData(list);
+            setData([list]);
             setLoading(true)
         }
 
@@ -33,24 +33,30 @@ function DetailNews({list}) {
     }, [])
 
     let content = null
+    let error = data.map(i => {
+        return i.error
+    }).toString()
+
+    console.log(data)
 
     if (loading) {
-        if (data.length > 0) {
+        if (error !== "unknown_post")
+         {
             content = 
-                    <div className="container mx-auto mt-20">
+                    <div className="container mx-auto mt-20 break-words py-10 px-5">
                     {data.map(i => {
-                        return <div key={i.id}>
-                            <div>
+                        return <div key={i.ID}>
+                            <div className="lg:w-2/4">
                             <img
-                                    src={`https://marifatussalaam.org/assets/berita/${i.image}`}
-                                    alt="tidak di temukan"></img>
+                                    src={`${i.post_thumbnail.URL}`}
+                                    alt="afwan tidak ada thumbnail :)"></img>
                             </div>
-                            <p>
-                                {i.judul_berita}
+                            <p className="text-3xl py-5 font-bold">
+                                {i.title}
                             </p>
-                            <div
+                            <div className="lg:w-2/3"
                                 dangerouslySetInnerHTML={{
-                                __html: i.isi_berita
+                                __html: i.content
                             }}></div>
                         </div>
                     })
@@ -77,13 +83,14 @@ function DetailNews({list}) {
 }
 
 DetailNews.getInitialProps = async ctx => {
+    console.log(ctx)
     if (!ctx.req) {
         return {list: []}
     }
     const id = ctx.query.id
-    const response = await fetch(`https://marifatussalaam.org/Rest_api?id=${id}`);
+    const response = await fetch(`https://public-api.wordpress.com/rest/v1.1/sites/msweb749567184.wordpress.com/posts/slug:${id}`);
     const list = await response.json();
-    return {list: list}
+    return {list: [list]}
 }
 
 export default DetailNews

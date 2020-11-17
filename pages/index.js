@@ -1,11 +1,11 @@
 import Head from 'next/head'
 import News from '../components/news'
 import Excellence from '../components/excellence'
-import Footer from '../components/footer'
 import Banner from '../components/banner'
 import AboutUs from '../components/aboutUs'
 
-function Home({data}) {
+function Home({posts}) {
+    console.log(posts)
 
     return (
         <div>
@@ -34,7 +34,7 @@ function Home({data}) {
             <Banner/>
             <AboutUs/>
 
-            <News news={data}/>
+            <News news={posts}/>
             {/* <Excellence/> */}
 
         </div>
@@ -42,11 +42,12 @@ function Home({data}) {
 }
 
 export async function getServerSideProps(context) {
-    const res = await fetch(`https://marifatussalaam.org/Rest_api`)
+    const res = await fetch(`https://public-api.wordpress.com/rest/v1.1/sites/msweb749567184.wordpress.com/posts/`)
     const data = await res.json()
+    const posts = data.posts
     return {
         props: {
-            data
+            posts
         }, // will be passed to the page component as props
     }
 }

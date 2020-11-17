@@ -1,6 +1,6 @@
 import style from './news.module.scss'
 import {useRouter} from 'next/router'
-import Link from 'next/link'
+// import Link from 'next/link'
 
 function News({news}) {
 
@@ -22,18 +22,19 @@ function News({news}) {
                 </p>
             </div>
             <div className="flex flex-wrap justify-center lg:justify-between">
-                {news.sort((a, b) => {
-                    return new Date(b.tanggal_berita) - new Date(a.tanggal_berita);
-                })
-                    .slice(0, 6)
+                {news
+                // .sort((a, b) => {
+                //     return new Date(b.tanggal_berita) - new Date(a.tanggal_berita);
+                // })
+                //     .slice(0, 6)
                     .map(item => {
 
-                        let isi = item.isi_berita;
+                        let isi = item.content;
                         if (isi.length > 100) {
                             isi = isi.substr(0, 100) + '[...]'
                         }
                         let datePart = item
-                                .tanggal_berita
+                                .date
                                 .match(/\d+/g),
                             monthInd = [
                                 "",
@@ -57,18 +58,18 @@ function News({news}) {
 
                         let ValueTgl = day + '/' + newMonth + '/' + year
 
-                        return <div key={item.id} className={style.wrapper}>
+                        return <div key={item.ID} className={style.wrapper}>
                             <div className={style.imgWrap}>
-                                <img
-                                    src={`https://marifatussalaam.org/assets/berita/${item.image}`}
-                                    alt="tidak di temukan"></img>
+                                 <img
+                                    src={`${item.post_thumbnail.URL}`}
+                                    alt="afwan tidak ada thumbnail :)"></img>
                                 <p className={style.date}>
                                     {ValueTgl}
                                 </p>
                             </div>
                             <div className={style.body}>
                                 <p className={style.title}>
-                                    {item.judul_berita}
+                                    {item.title}
                                 </p>
 
                                 <div
@@ -77,15 +78,14 @@ function News({news}) {
                                 }}
                                     className={style.desc}/>
 
+                                {/* <Detail id={item.id} title={item.judul_berita.split(" ").join("-")}></Detail> */}
+
                                 {/* <Link href="post/[id]" */}
                                 <button
                                     className={style.btnDetails}
                                     onClick={() => router.push({
                                     asPath: 'post/id',
-                                    pathname: `post/${item.id}`,
-                                    query: {
-                                        slug: item.judul_berita.split(" ").join("-")
-                                    }
+                                    pathname: `post/${item.slug}`,
                                 })}>
                                     Lihat selengkapnya
 
@@ -100,6 +100,17 @@ function News({news}) {
     )
 }
 
+
+// function Detail(props) {
+//     return (
+        
+//         <div>
+//             <Link as={`/detail/${props.title}`} href={`post/detail?id=${props.id}`}>  
+//             <a> Lihat selengkapnya </a>
+//             </Link>
+//         </div>
+//     )
+// }
 
 
 export default News
