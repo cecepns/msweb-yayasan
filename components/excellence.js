@@ -8,7 +8,7 @@ function Excellence() {
             <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="lg:text-center">
                     <p
-                        className="text-md leading-6 text-indigo-600 font-semibold tracking-wide uppercase">School Of Huffadh</p>
+                        className="text-md leading-6 text-indigo-600 font-semibold tracking-wide uppercase">School Of Huffadz</p>
                     <h3
                         className="mt-2 text-3xl tracking-wide leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl sm:leading-10">
                         Ma'rifatussalaam Quranic Boarding School

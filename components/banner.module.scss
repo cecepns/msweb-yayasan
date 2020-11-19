@@ -2,5 +2,13 @@
     width: 100%;
     min-height: 200px;
     padding-top: 5.5rem;
+    background-color: #edf2f7;
+    
+    @media (min-width: 992px) {
+        height: 630px;
+    }
+    @media (max-width: 567px) {
+        height: 220px;
+    }
 }
 

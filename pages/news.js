@@ -4,7 +4,6 @@ import {useRouter} from 'next/router'
 function News({news}) {
 
     const router = useRouter();
-    const handleDetails = () => router.push({asPath: 'post/id', pathname: `post/${item.slug}`})
 
     return (
         <div className="bg-gray-200 lg:px-12 pt-20 pb-5">
@@ -16,79 +15,86 @@ function News({news}) {
                     Berita Terbaru
                 </h3>
                 <p
-                    className="my-4 max-w-2xl font-light text-lg leading-7 text-black-500 opacity-75 lg:mx-auto">
-                    Simak terus kegiatan santri SMP AL-Qur'an Ma'rifatussalaam Quranic Boarding
-                    School yang seru, inovatif dan menyenangkan.
+                    className="my-4 max-w-2xl font-light text-lg leading-7 text-black-500 opacity-80 text-indigo-600 lg:mx-auto">
+                      Simak berita yang menarik, bermanfaat dan seputar kegiatan santri.
                 </p>
             </div>
             <div className="flex flex-wrap justify-center lg:justify-between">
                 {news
-                // .sort((a, b) => {     return new Date(b.tanggal_berita) - new
-                // Date(a.tanggal_berita); })     // .slice(0, 6)
+                // .sort((a, b) => {
+                //     return new Date(b.tanggal_berita) - new Date(a.tanggal_berita);
+                // })
+                //     // .slice(0, 6)
                     .map(item => {
 
-                    let isi = item.content;
-                    if (isi.length > 100) {
-                        isi = isi.substr(0, 100) + '[...]'
-                    }
-                    let datePart = item
-                            .date
-                            .match(/\d+/g),
-                        monthInd = [
-                            "",
-                            "Januari",
-                            "Februari",
-                            "Maret",
-                            "April",
-                            "Mei",
-                            "Juni",
-                            "Juli",
-                            "Agustus",
-                            "September",
-                            "Oktober",
-                            "November",
-                            "Desember"
-                        ],
-                        year = datePart[0],
-                        month = parseInt(datePart[1]),
-                        newMonth = monthInd[month],
-                        day = datePart[2];
+                        let isi = item.content;
+                        if (isi.length > 100) {
+                            isi = isi.substr(0, 100) + '[...]'
+                        }
+                        let datePart = item
+                                .date
+                                .match(/\d+/g),
+                            monthInd = [
+                                "",
+                                "Januari",
+                                "Februari",
+                                "Maret",
+                                "April",
+                                "Mei",
+                                "Juni",
+                                "Juli",
+                                "Agustus",
+                                "September",
+                                "Oktober",
+                                "November",
+                                "Desember"
+                            ],
+                            year = datePart[0],
+                            month = parseInt(datePart[1]),
+                            newMonth = monthInd[month],
+                            day = datePart[2];
 
-                    let ValueTgl = day + '/' + newMonth + '/' + year
+                        let ValueTgl = day + '/' + newMonth + '/' + year
 
-                    return <div key={item.ID} className={style.wrapper}>
-                        <div className={style.imgWrap} onClick={handleDetails}>
-                            <img src={`${item.post_thumbnail.URL}`} alt="afwan tidak ada thumbnail :)"></img>
-                            <p className={style.date}>
-                                {ValueTgl}
-                            </p>
+                        return <div key={item.ID} className={style.wrapper} >
+                            <div className={style.imgWrap}>
+                                <img
+                                    src={`${item.post_thumbnail.URL}`}
+                                    alt="afwan tidak ada thumbnail :)"></img>
+                                <p className={style.date}>
+                                    {ValueTgl}
+                                </p>
+                            </div>
+                            <div className={style.body}>
+                                <p className={style.title}>
+                                    {item.title}
+                                </p>
+
+                                <div
+                                    dangerouslySetInnerHTML={{
+                                    __html: isi
+                                }}
+                                    className={style.desc}/>
+
+                                <button
+                                    className={style.btnDetails}
+                                    onClick={() => router.push({
+                                    asPath: 'post/id',
+                                    pathname: `post/${item.slug}`,
+                                })}>
+                                    Lihat selengkapnya
+
+                                </button>
+                            </div>
                         </div>
-                        <div className={style.body}>
-                            <p className={style.title}>
-                                {item.title}
-                            </p>
 
-                            <div
-                                dangerouslySetInnerHTML={{
-                                __html: isi
-                            }}
-                                className={style.desc}/>
-
-                            <button
-                                className={style.btnDetails}
-                                onClick={handleDetails}>
-                                Lihat selengkapnya
-
-                            </button>
-                        </div>
-                    </div>
-
-                })
+                    })
 }
             </div>
         </div>
     )
 }
+
 
 export async function getServerSideProps(context) {
     const res = await fetch(`https://public-api.wordpress.com/rest/v1.1/sites/msweb749567184.wordpress.com/posts/`)

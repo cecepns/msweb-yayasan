@@ -1,3 +1,4 @@
+import style from './aboutUs.module.scss'
 import Image from 'next/image'
 
 function AboutUs() {
@@ -7,13 +8,17 @@ function AboutUs() {
                 <div className="grid lg:grid-cols-2 gap-4 ">
                     <div>
                         <h3
-                            className="mb-4 text-3xl tracking-wide font-extrabold text-gray-900 sm:text-4xl leading-9 lg:leading-relaxed">
+                            className="text-3xl tracking-wide font-extrabold text-gray-900 sm:text-4xl leading-9 lg:leading-relaxed">
                             Selamat Datang di
                             <br></br>
-                            SMP Al-Qur'an Ma'rifatussalaam Quranic Boarding School
+                            SMP Al-Qur'an Ma'rifatussalaam
                         </h3>
+
                         <p
-                            className="text-lg text-opacity-75 tracking-wide leading-relaxed text-gray-900">SMP
+                            className="mt-1 text-md leading-6 text-indigo-600 font-semibold tracking-wide uppercase">Qur'anic Boarding School</p>
+
+                        <p
+                            className="mt-4 text-lg text-opacity-75 tracking-wide leading-relaxed text-gray-900">SMP
                             Al-Qur'an Ma'rifatussalaam Qur'anic Boarding School berlokasi di Jl. Manyeti
                             No.6 RT 05/01 Kp.Cikadu Desa Manyeti, Kec. Dawuan, Kab. Subang, Provinsi Jawa
                             Barat. Ma'rifatussalaam memiliki kurikulum khas yang dirancang dan di persiapkan
@@ -30,7 +35,7 @@ function AboutUs() {
                             pada pembetukkan karakter (character building).</p>
 
                     </div>
-                    <div className="w-full overflow-hidden">
+                    <div className={style.AboutUs}>
                         <Image
                             alt="Picture of the author"
                             src="/pmb.png"
