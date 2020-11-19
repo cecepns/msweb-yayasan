@@ -15,16 +15,26 @@ function Banner() {
         slidesToScroll: 1
     };
 
+    const image = [
+        {
+            src : "https://psb.marifatussalaam.org/assets/frontend/image/header2.png"
+        },
+        {
+            src : "https://psb.marifatussalaam.org/assets/frontend/image/header3.png"
+        },
+    ]
+
     return (
         // <div className="">
         <div className={style.container}>
             <Slider {...settings}>
-                        <div><img
-                            src="https://psb.marifatussalaam.org/assets/frontend/image/header2.png"
-                            alt="none"/></div>
-                        <div><img
-                            src="https://psb.marifatussalaam.org/assets/frontend/image/header3.png"
-                            alt="none"/></div>
+                        {
+                            image.map((i, x) => (
+                                <div key={x}> <img
+                                src={i.src}
+                                alt="none"/> </div>
+                            ))
+                        }
                         {/* <div><img
                             src="https://zamzamsyifa.sch.id/wp-content/uploads/2020/09/Zamzam-Syifa-Boarding-School-E.jpg"
                             alt="none"/></div>
