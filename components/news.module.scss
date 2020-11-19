@@ -6,12 +6,26 @@
     overflow: hidden;
     background-color: white;
     box-shadow: 0 1px 3px 0 rgba(0,0,0,.377), 0 1px 1px 0 rgba(0,0,0,.14), 0 2px 1px -1px rgba(0,0,0,.12);
+    
+    &:hover {
+        cursor: pointer;
+        .imgWrap {
+            img:hover {
+                filter: contrast(.8);
+            }
+        }
+    }
+
     .imgWrap {
         width: 320px;
         height: 190px;
         background-color: rgba(233,30,99,.6);
         overflow: hidden;
         position: relative;
+        img {
+            filter: grayscale(1);
+            transition: all .3s ease;
+        }
         .date {
             min-width: 100px;
             height: 30px;
