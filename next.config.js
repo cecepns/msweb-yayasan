@@ -1,5 +1,5 @@
 module.exports = {
     images: {
-      domains: ['msweb749567184.files.wordpress.com'],
+      domains: ['msweb749567184.files.wordpress.com' , 'psb.marifatussalaam.org'],
     },
   }
