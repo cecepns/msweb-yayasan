@@ -37,7 +37,6 @@ function DetailNews({list}) {
         return i.error
     }).toString()
 
-    console.log(data)
 
     if (loading) {
         if (error !== "unknown_post")

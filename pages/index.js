@@ -5,7 +5,6 @@ import Banner from '../components/banner'
 import AboutUs from '../components/aboutUs'
 
 function Home({posts}) {
-    console.log(posts)
 
     return (
         <div>
