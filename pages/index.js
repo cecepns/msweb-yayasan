@@ -12,7 +12,7 @@ function Home({posts}) {
             <Head>
                 <title>SMP AL-QUR'AN MA'RIFATUSSALAAM (QURANIC BOARDING SCHOOL)
                 </title>
-                <link rel="icon" href="/favicon.ico"/>
+                <link rel="icon" href="/logo_sekolah.png"/>
                 <meta
                     name="description"
                     content="Ma'rifatussalaam Qur'anic Boarding School adalah sekolang Boarding School terbaik di subang"></meta>
