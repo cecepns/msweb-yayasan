@@ -25,7 +25,7 @@ function News({news}) {
                 //     // .slice(0, 6)
                     .map(item => {
 
-                        let isi = item.content;
+                        let isi = item.content.rendered;
                         if (isi.length > 100) {
                             isi = isi.substr(0, 100) + '[...]'
                         }
@@ -54,10 +54,10 @@ function News({news}) {
 
                         let ValueTgl = day + '/' + newMonth + '/' + year
 
-                        return <div key={item.ID} className={style.wrapper} >
+                        return <div key={item.id} className={style.wrapper} >
                             <div className={style.imgWrap}>
                                 <img
-                                    src={`${item.post_thumbnail.URL}`}
+                                    src={`${item.featured_image.size_full}`}
                                     alt="afwan tidak ada thumbnail :)"></img>
                                 <p className={style.date}>
                                     {ValueTgl}
@@ -65,7 +65,7 @@ function News({news}) {
                             </div>
                             <div className={style.body}>
                                 <p className={style.title}>
-                                    {item.title}
+                                    {item.title.rendered}
                                 </p>
 
                                 <div
@@ -95,9 +95,8 @@ function News({news}) {
 
 
 export async function getServerSideProps(context) {
-    const res = await fetch(`https://public-api.wordpress.com/rest/v1.1/sites/msweb749567184.wordpress.com/posts/`)
-    const data = await res.json()
-    const news = data.posts
+    const res = await fetch(`https://adminwp.marifatussalaam.org/wp-json/wp/v2/posts/`)
+    const news = await res.json()
     return {
         props: {
             news

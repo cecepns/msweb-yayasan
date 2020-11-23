@@ -41,9 +41,9 @@ function Home({posts}) {
 }
 
 export async function getServerSideProps(context) {
-    const res = await fetch(`https://public-api.wordpress.com/rest/v1.1/sites/msweb749567184.wordpress.com/posts/`)
+    const res = await fetch(`https://adminwp.marifatussalaam.org/wp-json/wp/v2/posts/`)
     const data = await res.json()
-    const posts = data.posts
+    const posts = data
     return {
         props: {
             posts

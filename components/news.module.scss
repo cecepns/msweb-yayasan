@@ -11,7 +11,7 @@
         cursor: pointer;
         .imgWrap {
             img:hover {
-                filter: contrast(.8);
+                filter: unset;
             }
         }
     }

@@ -25,7 +25,6 @@ function Banner() {
     ]
 
     return (
-        // <div className="">
         <div className={style.container}>
             <Slider {...settings}>
                         {
@@ -35,13 +34,6 @@ function Banner() {
                                 alt="none"/> </div>
                             ))
                         }
-                        {/* <div><img
-                            src="https://zamzamsyifa.sch.id/wp-content/uploads/2020/09/Zamzam-Syifa-Boarding-School-E.jpg"
-                            alt="none"/></div>
-                        <div><img
-                            src="https://zamzamsyifa.sch.id/wp-content/uploads/2020/09/Zamzam-Syifa-Boarding-School-B.jpg"
-                            alt="none"/></div> */}
-
                     </Slider>
         </div>
     )
