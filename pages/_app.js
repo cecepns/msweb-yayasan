@@ -10,8 +10,8 @@ function MyApp({Component, pageProps}) {
     <NextNprogress color="#e91e63" startPosition={0.3} stopDelayMs={200} height="3"/> 
     < Navbar /> 
     < Component {...pageProps } /> 
-    
-    <Footer/> </>
+    <Footer/> 
+    </>
 }
 
 export default MyApp

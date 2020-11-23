@@ -34,6 +34,7 @@ function Home({posts}) {
             <AboutUs/>
 
             <News news={posts}/>
+
             <Excellence/>
 
         </div>
@@ -41,7 +42,7 @@ function Home({posts}) {
 }
 
 export async function getServerSideProps(context) {
-    const res = await fetch(`https://adminwp.marifatussalaam.org/wp-json/wp/v2/posts/`)
+    const res = await fetch(`https://adminwp.marifatussalaam.org/wp-json/wp/v2/posts?per_page=6`)
     const data = await res.json()
     const posts = data
     return {
