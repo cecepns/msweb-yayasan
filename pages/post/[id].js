@@ -39,7 +39,7 @@ function DetailNews({list}) {
         if (data.length > 0)
          {
             content = 
-                    <div className="container mx-auto mt-20 break-words py-10 px-5">
+                    <div className="container mx-auto mt-20 py-10 px-5">
                     {data.map(i => {
                         return <div key={i.id} className="flex flex-col items-center">
                             <div>
