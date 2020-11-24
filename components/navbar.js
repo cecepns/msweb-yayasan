@@ -25,7 +25,7 @@ function Navbar() {
             path: '/ekstrakurikuler',
             menuName: 'ekstrakurikuler'
         }, {
-            path: '/kontak',
+            path: '/contact',
             menuName: 'Kontak'
         }
     ];
