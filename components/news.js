@@ -22,82 +22,88 @@ function News({news}) {
                 </p>
             </div>
             <div className="flex flex-wrap justify-center lg:justify-between">
-                {news
-                // .sort((a, b) => {     return new Date(b.tanggal_berita) - new
-                // Date(a.tanggal_berita); })     .slice(0, 6)
-                    .map(item => {
+                {news.length > 1 
+                    ? news
+                    // .sort((a, b) => {     return new Date(b.tanggal_berita) - new
+                    // Date(a.tanggal_berita); })     .slice(0, 6)
+                        .map(item => {
 
-                    let isi = item.content.rendered;
-                    if (isi.length > 100) {
-                        isi = isi.substr(0, 100) + '[...]'
-                    }
-                    let datePart = item
-                            .date
-                            .match(/\d+/g),
-                        monthInd = [
-                            "",
-                            "Januari",
-                            "Februari",
-                            "Maret",
-                            "April",
-                            "Mei",
-                            "Juni",
-                            "Juli",
-                            "Agustus",
-                            "September",
-                            "Oktober",
-                            "November",
-                            "Desember"
-                        ],
-                        year = datePart[0],
-                        month = parseInt(datePart[1]),
-                        newMonth = monthInd[month],
-                        day = datePart[2];
+                        let isi = item.content.rendered;
+                        if (isi.length > 100) {
+                            isi = isi.substr(0, 100) + '[...]'
+                        }
+                        let datePart = item
+                                .date
+                                .match(/\d+/g),
+                            monthInd = [
+                                "",
+                                "Januari",
+                                "Februari",
+                                "Maret",
+                                "April",
+                                "Mei",
+                                "Juni",
+                                "Juli",
+                                "Agustus",
+                                "September",
+                                "Oktober",
+                                "November",
+                                "Desember"
+                            ],
+                            year = datePart[0],
+                            month = parseInt(datePart[1]),
+                            newMonth = monthInd[month],
+                            day = datePart[2];
 
-                    let ValueTgl = day + '/' + newMonth + '/' + year;
+                        let ValueTgl = day + '/' + newMonth + '/' + year;
 
-                    return <div key={item.id} className={style.wrapper}>
-                        <div className={style.imgWrap}>
-                            <img
-                                src={`${item.featured_image.size_full}`}
-                                alt="afwan tidak ada thumbnail :)"></img>
-                            <p className={style.date}>
-                                {ValueTgl}
-                            </p>
+                        return <div key={item.id} className={style.wrapper}>
+                            <div className={style.imgWrap}>
+                                <img
+                                    src={`${item.featured_image.size_full}`}
+                                    alt="afwan tidak ada thumbnail :)"></img>
+                                <p className={style.date}>
+                                    {ValueTgl}
+                                </p>
+                            </div>
+                            <div className={style.body}>
+
+                                <p
+                                    className="text-md mb-1 leading-6 text-indigo-600 font-semibold tracking-wide uppercase">
+                                    {item
+                                        .category
+                                        .map(name => {
+                                            return name.name
+                                        })
+                                        .join("/")}
+                                </p>
+
+                                <p className={style.title}>
+                                    {item.title.rendered}
+                                </p>
+
+                                <div
+                                    className={style.desc}
+                                    dangerouslySetInnerHTML={{
+                                    __html: isi
+                                }}></div>
+
+                                <button
+                                    className={style.btnDetails}
+                                    onClick={() => router.push({asPath: 'post/id', pathname: `post/${item.slug}`})}>
+                                    Lihat selengkapnya
+
+                                </button>
+                            </div>
                         </div>
-                        <div className={style.body}>
 
-                            <p
-                                className="text-md mb-1 leading-6 text-indigo-600 font-semibold tracking-wide uppercase">
-                                {item
-                                    .category
-                                    .map(name => {
-                                        return name.name
-                                    })
-                                    .join("/")}
-                            </p>
-
-                            <p className={style.title}>
-                                {item.title.rendered}
-                            </p>
-
-                            <div
-                                className={style.desc}
-                                dangerouslySetInnerHTML={{
-                                __html: isi
-                            }}></div>
-
-                            <button
-                                className={style.btnDetails}
-                                onClick={() => router.push({asPath: 'post/id', pathname: `post/${item.slug}`})}>
-                                Lihat selengkapnya
-
-                            </button>
-                        </div>
-                    </div>
-
-                })
-}
+                    })
+                    : <div className="mx-auto">
+                        <p
+                            className="my-4 max-w-2xl font-light text-lg text-center leading-7 text-red-500 opacity-75 lg:mx-auto">
+                            Mohon maaf gagal memuat berita, cek koneksi anda terlebih dahulu kemudian refresh halaman.
+                        </p>
+                    </div>}
             </div>
         </div>
     )

@@ -5,6 +5,7 @@ function Socmed() {
     return(
         <div className="py-12 mb-4 bg-white">
         <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+            
             {/* <div className="lg:text-center">
                 <p
                     className="text-md leading-6 text-indigo-600 font-semibold tracking-wide uppercase">School Of Huffadz</p>
