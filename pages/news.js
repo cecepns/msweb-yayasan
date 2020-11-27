@@ -12,15 +12,11 @@ function News({news, count , currentPage}) {
         const currentQuery = {...router.query}; //Copy current query to avoid its removing
         currentQuery.page = page.selected + 1; 
 
-        if(currentQuery.page > 1) {
             router.push({
                 pathname: currentPath,
                 query: currentQuery,
             });
-        }
-        router.push({
-            pathname: '/news',
-        });
+        
         
 
     };
