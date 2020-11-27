@@ -2,6 +2,7 @@ import News from '../components/news'
 import Excellence from '../components/excellence'
 import Banner from '../components/banner'
 import AboutUs from '../components/aboutUs'
+import VideoProfile from '../components/videoProfile'
 
 function Home({posts}) {
 
@@ -20,7 +21,7 @@ function Home({posts}) {
 }
 
 export async function getServerSideProps(context) {
-    const res = await fetch(`https://adminwp.marifatussalaam.org/wp-json/wp/v2/posts?per_page=6`)
+    const res = await fetch(`https://adminwp.marifatussalaam.org/wp-json/wp/v2/posts?per_page=3`)
     const data = await res.json()
     const posts = data
     return {

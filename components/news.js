@@ -9,7 +9,7 @@ function News({news}) {
     console.log(news)
 
     return (
-        <div className="bg-gray-200 lg:px-12 py-5">
+        <div className="bg-gray-200 lg:px-12 py-8">
             <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 lg:text-center">
 
                 <h3
@@ -21,7 +21,7 @@ function News({news}) {
                     Simak berita yang menarik, bermanfaat dan seputar kegiatan santri.
                 </p>
             </div>
-            <div className="flex flex-wrap justify-center lg:justify-between">
+            <div className="flex flex-wrap justify-center lg:justify-between lg:mb-4">
                 {news.length > 1 
                     ? news
                     // .sort((a, b) => {     return new Date(b.tanggal_berita) - new

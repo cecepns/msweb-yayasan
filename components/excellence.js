@@ -1,5 +1,5 @@
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import {faStarAndCrescent, faMapMarkerAlt, faBuilding} from '@fortawesome/free-solid-svg-icons'
+import {faStarAndCrescent, faMapMarkerAlt, faBuilding, faUserAlt, faGraduationCap} from '@fortawesome/free-solid-svg-icons'
 
 function Excellence() {
     return (
@@ -98,6 +98,45 @@ function Excellence() {
                                 </div>
                             </div>
                         </li>
+
+                        <li className="mt-10 md:mt-0">
+                            <div className="flex">
+                                <div className="flex-shrink-0">
+                                    <div
+                                        className="flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
+
+                                        <FontAwesomeIcon icon={faUserAlt} size="lg"/>
+
+                                    </div>
+                                </div>
+                                <div className="ml-4">
+                                    <h4 className="text-lg leading-6 tracking-wide font-medium text-gray-900">SDM Profesional</h4>
+                                    <p className="mt-2 text-lg leading-6 tracking-wide font-light text-gray-500">
+                                    Memiliki SDM pendidik dan tenaga kependidikan yang terseleksi dengan rata-rata berusia muda.
+                                    </p>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li className="mt-10 md:mt-0">
+                            <div className="flex">
+                                <div className="flex-shrink-0">
+                                    <div
+                                        className="flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
+
+                                        <FontAwesomeIcon icon={faGraduationCap} size="lg"/>
+
+                                    </div>
+                                </div>
+                                <div className="ml-4">
+                                    <h4 className="text-lg leading-6 tracking-wide font-medium text-gray-900">Daya Serap Tingi</h4>
+                                    <p className="mt-2 text-lg leading-6 tracking-wide font-light text-gray-500">
+                                    Alumni SMP AL-Qur'an Ma'rifatussalaam tersebar di SMA,SMAIT, Pondok Pesantren favorit.
+                                    </p>
+                                </div>
+                            </div>
+                        </li>
+
                     </ul>
                 </div>
             </div>
