@@ -140,11 +140,9 @@ function News({news, count, currentPage}) {
         )
 }
 
-export async function getServerSideProps({query}) {
+export async function getStaticProps({query}) {
     // console.log(req.params)
     const page = query.page || 1
-
-    console.log(page)
 
     const res = await fetch(`https://adminwp.marifatussalaam.org/wp-json/wp/v2/posts?per_page=3&page=${page}`)
     const news = await res.json()
