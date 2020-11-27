@@ -140,7 +140,7 @@ function News({news, count, currentPage}) {
         )
 }
 
-export async function getStaticProps({query}) {
+export async function getServerSideProps({query}) {
     // console.log(req.params)
     const page = query.page || 1
 
@@ -153,7 +153,7 @@ export async function getStaticProps({query}) {
         props: {
             news: news,
             count: Math.ceil(resCount.length / 3),
-            currentPage: 1
+            currentPage: page
         }, // will be passed to the page component as props
     }
 }
