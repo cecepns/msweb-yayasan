@@ -10,6 +10,7 @@ function Home({posts}) {
         <div>
            
             <Banner/>
+    
             <AboutUs/>
 
             <News news={posts}/>

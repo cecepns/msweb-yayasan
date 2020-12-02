@@ -147,12 +147,12 @@ export async function getServerSideProps({query}) {
     const res = await fetch(`https://adminwp.marifatussalaam.org/wp-json/wp/v2/posts?per_page=3&page=${page}`)
     const news = await res.json()
 
-    const count = await fetch(`https://adminwp.marifatussalaam.org/wp-json/wp/v2/posts/`)
-    const resCount = await count.json()
+    // const count = await fetch(`https://adminwp.marifatussalaam.org/wp-json/wp/v2/posts/`)
+    // const resCount = await count.json()
     return {
         props: {
             news: news,
-            count: Math.ceil(resCount.length / 3),
+            count: Math.ceil(8 / 3),  
             currentPage: page
         }, // will be passed to the page component as props
     }
