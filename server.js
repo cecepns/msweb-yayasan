@@ -1,32 +1,29 @@
-const next = require('next');
-const express = require('express');
+const express = require('express')
+const next = require('next')
 
-const port = 4000;
-const dev = process.env.NODE_ENV !== 'production';
-const app = next({dev});
+const port = parseInt(process.env.PORT, 10) || 3000
+const dev = process.env.NODE_ENV !== 'production'
+const app = next({ dev })
+const handle = app.getRequestHandler()
 
-const handle = app.getRequestHandler();
+app.prepare().then(() => {
+  const server = express()
 
-app
-    .prepare()
-    .then(() => {
+  server.get('/a', (req, res) => {
+    return app.render(req, res, '/a', req.query)
+  })
 
-        const server = express();
+  server.get('/b', (req, res) => {
+    return app.render(req, res, '/b', req.query)
+  })
 
-        server.get('*', (req, res) => {
-            return handle(req, res);
-        });
+  server.all('*', (req, res) => {
+    return handle(req, res)
+  })
 
-        server.listen(port, err => {
-            if (err) {
-                throw err;
-            } else {
-                console.log(`Served started at port ${port}`)
-            }
-        });
+  server.listen(port, (err) => {
+    if (err) throw err
+    console.log(`> Ready on http://localhost:${port}`)
+  })
+})
 
-    })
-    .catch(ex => {
-        console.error(ex.stack);
-        process.exit(1);
-    })
