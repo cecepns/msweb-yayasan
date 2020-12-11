@@ -17,24 +17,22 @@ function Banner() {
 
     const image = [
         {
-            src : "https://psb.marifatussalaam.org/assets/frontend/image/header2.png"
-        },
-        {
-            src : "https://psb.marifatussalaam.org/assets/frontend/image/header3.png"
-        },
-    ]
+            src: "https://psb.marifatussalaam.org/assets/frontend/image/header2.png"
+        }, {
+            src: "https://psb.marifatussalaam.org/assets/frontend/image/header3.png"
+        }
+    ];
 
     return (
         <div className={style.container}>
             <Slider {...settings}>
-                        {
-                            image.map((i, x) => (
-                                <div key={x}> <img
-                                src={i.src}
-                                alt="none"/> </div>
-                            ))
-                        }
-                    </Slider>
+                {image.map((i, x) => (
+                    <div key={x}>
+                        <img src={i.src} alt="none"/>
+                    </div>
+                ))
+}
+            </Slider>
         </div>
     )
 }

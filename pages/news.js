@@ -109,6 +109,7 @@ function News({news, count, currentPage}) {
                 })
 }
             </div>
+
             <ReactPaginate
                 previousLabel={'previous'}
                 nextLabel={'next'}
@@ -147,6 +148,14 @@ export async function getServerSideProps({query}) {
     const res = await fetch(`https://adminwp.marifatussalaam.org/wp-json/wp/v2/posts?per_page=3&page=${page}`)
     const news = await res.json()
 
+    if (!news) {
+        return {
+          redirect: {
+            destination: '/',
+            permanent: false,
+          },
+        }
+      }
     // const count = await fetch(`https://adminwp.marifatussalaam.org/wp-json/wp/v2/posts/`)
     // const resCount = await count.json()
     return {

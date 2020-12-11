@@ -1,0 +1,24 @@
+.image {
+    width: 100%;
+    filter: grayscale(1);
+    transition: all .3s ease;
+
+    &:hover {
+        filter: unset;
+    }
+}
+
+@media (min-width: 768px) {
+    .image {
+        padding-top: 50px;
+        padding-right: 5px;
+    }
+
+}
+
+@media (min-width: 768px) {
+    .wrapper {
+        display: flex !important;
+    }
+
+}

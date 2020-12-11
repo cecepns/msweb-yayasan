@@ -3,6 +3,7 @@ import Excellence from '../components/excellence'
 import Banner from '../components/banner'
 import AboutUs from '../components/aboutUs'
 import VideoProfile from '../components/videoProfile'
+import Testimoni from '../components/testimoni'
 
 function Home({posts}) {
 
@@ -16,6 +17,8 @@ function Home({posts}) {
             <News news={posts}/>
 
             <Excellence/>
+
+            <Testimoni/>
 
         </div>
     )
