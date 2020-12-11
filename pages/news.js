@@ -1,6 +1,8 @@
 import style from '../components/news.module.scss'
 import {useRouter, withRouter} from 'next/router'
 import ReactPaginate from 'react-paginate';
+import Link from 'next/link'
+
 // import stylePaginate from '../components/paginate.module.scss';
 
 function News({news, count, currentPage}) {
@@ -17,6 +19,11 @@ function News({news, count, currentPage}) {
         router.push({pathname: currentPath, query: currentQuery});
 
     };
+
+    const back = () => {
+        router.push('/')
+    }
+
     let content = null
     if (news.length > 0) {
         content = <div className="bg-gray-200 lg:px-12 pt-20 pb-5">
@@ -130,19 +137,18 @@ function News({news, count, currentPage}) {
     } else {
         content = <div
             className="bg-white-300 mx-auto my-auto my-auto w-full h-full flex justify-center items-center fixed">
-            Halaman Berita tidak di temukan
+            Halaman Berita tidak di temukan <button onClick={back} style={{color : 'blue'}}> , Kembali </button>
         </div>
     }
 
     return (
-        <>
-        {content}
-        </>
-        )
+        <div>
+            {content}
+        </div>
+    )
 }
 
 export async function getServerSideProps({query}) {
-    // console.log(req.params)
     const page = query.page || 1
 
     const res = await fetch(`https://adminwp.marifatussalaam.org/wp-json/wp/v2/posts?per_page=3&page=${page}`)
@@ -150,20 +156,19 @@ export async function getServerSideProps({query}) {
 
     if (!news) {
         return {
-          redirect: {
-            destination: '/',
-            permanent: false,
-          },
+            redirect: {
+                destination: '/',
+                permanent: false
+            }
         }
-      }
-    // const count = await fetch(`https://adminwp.marifatussalaam.org/wp-json/wp/v2/posts/`)
-    // const resCount = await count.json()
+    }
+
     return {
         props: {
             news: news,
-            count: Math.ceil(12 / 3),  
+            count: Math.ceil(12 / 3),
             currentPage: page
-        }, // will be passed to the page component as props
+        }
     }
 }
 

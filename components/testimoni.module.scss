@@ -3,6 +3,9 @@
     filter: grayscale(1);
     transition: all .3s ease;
 
+    img {
+    cursor: initial;
+    }
     &:hover {
         filter: unset;
     }
@@ -10,6 +13,7 @@
 
 .wrapper {
     outline: none;
+    cursor: grab;
 }
 
 @media (min-width: 768px) {

@@ -18,12 +18,10 @@ function Navbar() {
         {
             path: '/',
             menuName: 'Home'
-        }, 
-        {
+        }, {
             path: '/news',
             menuName: 'Berita'
-        }
-        , {
+        }, {
             path: '/ekstrakurikuler',
             menuName: 'ekstrakurikuler'
         }, {
