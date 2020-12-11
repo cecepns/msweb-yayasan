@@ -161,7 +161,7 @@ export async function getServerSideProps({query}) {
     return {
         props: {
             news: news,
-            count: Math.ceil(8 / 3),  
+            count: Math.ceil(12 / 3),  
             currentPage: page
         }, // will be passed to the page component as props
     }

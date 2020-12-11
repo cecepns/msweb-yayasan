@@ -29,7 +29,7 @@ function TestimoniSLider() {
     return (
 
         <SliderTesti {...settings}>
-            <div className={Style.wrapper + " block bg-white rounded-xl py-8 pr-8 md:p-0"}>
+            <div className={Style.wrapper + " block bg-white rounded-xl p-8 md:p-0"}>
                 <div className={Style.image}>
                     <img
                         className="w-32 h-32 md:w-20 md:h-20 md:rounded-none rounded-full mx-auto"
@@ -38,7 +38,7 @@ function TestimoniSLider() {
                         width="384"
                         height="512"></img>
                 </div>
-                <div className="pt-6 md:py-8 pr-8 text-center md:text-left space-y-4">
+                <div className="pt-6 md:p-8 text-center md:text-left space-y-4">
 
                     <div>
                         <p
@@ -63,7 +63,7 @@ function TestimoniSLider() {
                 </div>
             </div>
 
-            <div className={Style.wrapper + " block bg-white rounded-xl py-8 pr-8 md:p-0"}>
+            <div className={Style.wrapper + " block bg-white rounded-xl p-8 md:p-0"}>
                 <div className={Style.image}>
                     <img
                         className="w-32 h-32 md:w-20 md:h-20 md:rounded-none rounded-full mx-auto"
@@ -72,7 +72,7 @@ function TestimoniSLider() {
                         width="384"
                         height="512"></img>
                 </div>
-                <div className="pt-6 md:py-8 pr-8 text-center md:text-left space-y-4">
+                <div className="pt-6 md:p-8 text-center md:text-left space-y-4">
 
                     <div>
                         <p
@@ -98,7 +98,7 @@ function TestimoniSLider() {
                 </div>
             </div>
 
-            <div className={Style.wrapper + " block bg-white rounded-xl py-8 pr-8 md:p-0"}>
+            <div className={Style.wrapper + " block bg-white rounded-xl p-8 md:p-0"}>
                 <div className={Style.image}>
                     <img
                         className="w-32 h-32 md:w-20 md:h-20 md:rounded-none rounded-full mx-auto"
@@ -107,7 +107,7 @@ function TestimoniSLider() {
                         width="384"
                         height="512"></img>
                 </div>
-                <div className="pt-6 md:py-8 pr-8 text-center md:text-left space-y-4">
+                <div className="pt-6 md:p-8 text-center md:text-left space-y-4">
 
                     <div>
                         <p

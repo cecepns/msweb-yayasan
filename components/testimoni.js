@@ -2,7 +2,7 @@ import TestimoniCompt from './testimoni.child'
 
 function Testimoni() {
     return (
-        <div className="bg-white lg:px-12 py-8">
+        <div className="bg-white lg:px-12">
             <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 lg:text-center">
 
                 <h3
