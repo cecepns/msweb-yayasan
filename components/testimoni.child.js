@@ -12,8 +12,10 @@ function TestimoniSLider() {
         infinite: true,
         speed: 1000,
         autoplay: true,
-        autoplaySpeed: 4000,
-        swipeToSlide: true,
+        autoplaySpeed: 5000,
+        swipeToSlide: false,
+        touchMove: true,
+        swipe:true,
         slidesToShow: 2,
         slidesToScroll: 2,
         responsive: [
