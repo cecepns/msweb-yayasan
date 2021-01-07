@@ -3,7 +3,6 @@ import {useRouter, withRouter} from 'next/router'
 import ReactPaginate from 'react-paginate';
 import Link from 'next/link'
 
-// import stylePaginate from '../components/paginate.module.scss';
 
 function News({news, count, currentPage}) {
 
@@ -13,7 +12,7 @@ function News({news, count, currentPage}) {
         const currentPath = router.pathname;
         const currentQuery = {
             ...router.query
-        }; //Copy current query to avoid its removing
+        }; 
         currentQuery.page = page.selected + 1;
 
         router.push({pathname: currentPath, query: currentQuery});

@@ -34,7 +34,7 @@ function DetailNews({list}) {
 
     let content = null
   
-    console.log(data)
+    console.log(router)
     if (loading) {
         if (data.length > 0)
          {

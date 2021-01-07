@@ -6,7 +6,6 @@ function News({news}) {
 
     const router = useRouter();
 
-    console.log(news)
 
     return (
         <div className="bg-gray-200 lg:px-12 py-8">
@@ -92,7 +91,7 @@ function News({news}) {
                                     className={style.btnDetails}
                                     onClick={() => router.push({asPath: 'post/id', pathname: `post/${item.slug}`})}>
                                     Lihat selengkapnya
-
+                                    
                                 </button>
                             </div>
                         </div>

@@ -1,10 +1,29 @@
 import style from './navbar.module.scss'
 import Link from 'next/link'
 import Logo from 'next/image'
-import {useState} from 'react'
+import {useState, useEffect} from 'react'
 import {useRouter} from 'next/router'
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import {faSearch} from '@fortawesome/free-solid-svg-icons'
+import Search from '../components/searchList'
 
 function Navbar() {
+
+    const menu = [
+        {
+            path: '/',
+            menuName: 'Home'
+        }, {
+            path: '/ekstrakurikuler',
+            menuName: 'ekstrakurikuler'
+        }, {
+            path: '/contact',
+            menuName: 'Kontak'
+        }, {
+            path: '/news',
+            menuName: 'Berita'
+        }
+    ];
 
     const router = useRouter();
     const pathName = router.pathname
@@ -12,23 +31,17 @@ function Navbar() {
     const [toggle,
         setToggle] = useState(true);
 
-    const handleToggle = () => setToggle(!toggle);
+    const [search,
+        setSearch] = useState(true)
 
-    const menu = [
-        {
-            path: '/',
-            menuName: 'Home'
-        }, {
-            path: '/news',
-            menuName: 'Berita'
-        }, {
-            path: '/ekstrakurikuler',
-            menuName: 'ekstrakurikuler'
-        }, {
-            path: '/contact',
-            menuName: 'Kontak'
-        }
-    ];
+    const handleToggle = () => setToggle(!toggle);
+    const handleSearch = () => setSearch(!search);
+
+    const handleCallback = (params) => {
+        setSearch(params)
+    }
+
+    console.log(search)
 
     return (
 
@@ -47,6 +60,7 @@ function Navbar() {
                 ? style.menuWrapper
                 : style.menuWrapper + " " + style.menuWrapperActive}>
                 {menu.map((item, index) => (
+
                     <Link key={index} href={item.path}>
                         <a
                             className={pathName === item.path
@@ -54,8 +68,25 @@ function Navbar() {
                             : style.menuItem}
                             onClick={handleToggle}>
                             {item.menuName}</a>
+
                     </Link>
+
                 ))}
+
+                <div className={style.wrapperSearch}>
+
+                    <div className="px-4 md:px-0">
+                        <FontAwesomeIcon icon={faSearch} size="lg" onClick={handleSearch}/>
+                    </div>
+                    <div
+                        className={search
+                        ? style.formSearch
+                        : style.formSearch + " " + style.formSearchActive}>
+
+                        <Search parentCallback={handleCallback}/>
+                    </div>
+                </div>
+
             </div>
 
             {toggle

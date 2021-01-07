@@ -4,6 +4,7 @@ import Banner from '../components/banner'
 import AboutUs from '../components/aboutUs'
 import VideoProfile from '../components/videoProfile'
 import Testimoni from '../components/testimoni'
+// import Search from '../components/searchList'
 
 function Home({posts}) {
 
@@ -19,6 +20,8 @@ function Home({posts}) {
             <Excellence/>
 
             <Testimoni/>
+
+            {/* <Search/> */}
 
         </div>
     )
