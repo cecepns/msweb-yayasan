@@ -33,15 +33,22 @@ function Navbar() {
 
     const [search,
         setSearch] = useState(true)
-
-    const handleToggle = () => setToggle(!toggle);
+        
     const handleSearch = () => setSearch(!search);
+
+    const handleToggle = () => {
+        setToggle(!toggle);
+        if (search === false) {
+            setSearch(true)
+        }
+    }
 
     const handleCallback = (params) => {
         setSearch(params)
+        if (toggle === false) {
+            setToggle(true)
+        }
     }
-
-    console.log(search)
 
     return (
 

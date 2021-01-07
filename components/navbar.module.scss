@@ -154,6 +154,9 @@
     .wrapper {
         padding: 0 1.5rem;
         .wrapperSearch {
+            .formSearch{
+                top : -277px;
+            }
             .formSearchActive {
                 right: -80px;
             }

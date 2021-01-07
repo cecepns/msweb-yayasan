@@ -110,7 +110,7 @@ function Search({parentCallback}) {
                                     onKeyUp={handleEnter}
                                     onChange={handleInputSearch}></input>
                             </div>
-                            <div className="max-h-100px py-3 text-sm overflow-auto ">
+                            <div className="h-32 md:h-full lg:h-full max-h-100px py-3 text-sm overflow-auto ">
                                 {content}
                             </div>
                             <div
