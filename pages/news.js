@@ -3,7 +3,6 @@ import {useRouter, withRouter} from 'next/router'
 import ReactPaginate from 'react-paginate';
 import Link from 'next/link'
 
-
 function News({news, count, currentPage}) {
 
     const router = useRouter();
@@ -12,7 +11,7 @@ function News({news, count, currentPage}) {
         const currentPath = router.pathname;
         const currentQuery = {
             ...router.query
-        }; 
+        };
         currentQuery.page = page.selected + 1;
 
         router.push({pathname: currentPath, query: currentQuery});
@@ -22,6 +21,9 @@ function News({news, count, currentPage}) {
     const back = () => {
         router.push('/')
     }
+
+    console.log(news);
+    console.log(count);
 
     let content = null
     if (news.length > 0) {
@@ -136,36 +138,33 @@ function News({news, count, currentPage}) {
     } else {
         content = <div
             className="bg-white-300 mx-auto my-auto my-auto w-full h-full flex justify-center items-center fixed">
-            Halaman Berita tidak di temukan <button onClick={back} style={{color : 'blue'}}> , Kembali </button>
+            Halaman Berita tidak di temukan
+            <button onClick={back} style={{
+                color: 'blue'
+            }}>
+                , Kembali
+            </button>
         </div>
     }
 
     return (
         <div>
-            {content}
+            {content} 
         </div>
     )
 }
 
 export async function getServerSideProps({query}) {
     const page = query.page || 1
-
+    
     const res = await fetch(`https://adminwp.marifatussalaam.org/wp-json/wp/v2/posts?per_page=3&page=${page}`)
-    const news = await res.json()
-
-    if (!news) {
-        return {
-            redirect: {
-                destination: '/',
-                permanent: false
-            }
-        }
-    }
+    const count = await res.headers.get('X-WP-Total')
+    const news = await res.json();
 
     return {
         props: {
             news: news,
-            count: Math.ceil(12 / 3),
+            count: Math.ceil(count / 3),
             currentPage: page
         }
     }

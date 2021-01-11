@@ -15,7 +15,7 @@ function Navbar() {
             menuName: 'Home'
         }, {
             path: '/ekstrakurikuler',
-            menuName: 'ekstrakurikuler'
+            menuName: 'Ekstrakurikuler'
         }, {
             path: '/contact',
             menuName: 'Kontak'
@@ -33,7 +33,7 @@ function Navbar() {
 
     const [search,
         setSearch] = useState(true)
-        
+
     const handleSearch = () => setSearch(!search);
 
     const handleToggle = () => {
