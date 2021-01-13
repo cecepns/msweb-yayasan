@@ -7,7 +7,7 @@ function Testimoni() {
 
                 <h3
                     className="mt-2 text-3xl tracking-wide leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl sm:leading-10">
-                    Kata Santri
+                    Testimoni Santri
                 </h3>
                 <p
                     className="mt-4 max-w-2xl  font-light text-lg leading-6 text-gray-500 lg:mx-auto tracking-wide">

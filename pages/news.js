@@ -137,7 +137,7 @@ function News({news, count, currentPage}) {
 
     } else {
         content = <div
-            className="bg-white-300 mx-auto my-auto my-auto w-full h-full flex justify-center items-center fixed">
+            className="h-screen bg-white-300 mx-auto my-auto my-auto w-full h-full flex justify-center items-center">
             Halaman Berita tidak di temukan
             <button onClick={back} style={{
                 color: 'blue'

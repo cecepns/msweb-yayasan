@@ -23,12 +23,16 @@ function Banner() {
         }
     ];
 
+    const handleClickDaftar = () => {
+        window.open('https://psb.marifatussalaam.org', '_blank')
+    }
+
     return (
         <div className={style.container}>
             <Slider {...settings}>
                 {image.map((i, x) => (
                     <div key={x}>
-                        <img src={i.src} alt="none"/>
+                        <img src={i.src} alt="none" onClick={handleClickDaftar}/>
                     </div>
                 ))
 }

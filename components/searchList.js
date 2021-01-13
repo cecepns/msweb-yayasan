@@ -1,5 +1,5 @@
 import {useState, Fragment} from 'react';
-import {useRouter} from 'next/router';
+import {useRouter, withRouter} from 'next/router';
 import React from 'react'
 
 function Search({parentCallback}) {
@@ -37,19 +37,24 @@ function Search({parentCallback}) {
     }
 
     const handlePushUrl = (slug) => {
-        router.push({pathname: `/post/${slug}`})
+        if (router.pathname === "/post/[id]") {
+            window
+                .location
+                .assign(`/post/${slug}`)
+        } else {
+            router.push(`/post/${slug}`)
+        }
         parentCallback(true)
         setListSearch(null)
         setInputSearch("")
 
     }
 
-    const handleCloseSearch = ()=> {
+    const handleCloseSearch = () => {
         parentCallback(true)
         setListSearch(null)
         setInputSearch("")
     }
-
 
     let content = null
 
@@ -110,12 +115,15 @@ function Search({parentCallback}) {
                                     onKeyUp={handleEnter}
                                     onChange={handleInputSearch}></input>
                             </div>
-                            <div className="h-32 md:h-full lg:h-full max-h-100px py-3 text-sm overflow-auto ">
+                            <div
+                                className="h-32 md:h-full lg:h-full max-h-100px py-3 text-sm overflow-auto ">
                                 {content}
                             </div>
                             <div
                                 className="block bg-gray-200 text-sm text-right py-2 px-3 -mx-3 -mb-2 rounded-b-lg">
-                                <button className="hover:text-gray-600 text-gray-500 font-bold py-2 px-4" onClick={handleCloseSearch}>
+                                <button
+                                    className="hover:text-gray-600 text-gray-500 font-bold py-2 px-4"
+                                    onClick={handleCloseSearch}>
                                     Batal
                                 </button>
                                 <button
@@ -134,4 +142,4 @@ function Search({parentCallback}) {
     )
 }
 
-export default Search;
+export default withRouter(Search);

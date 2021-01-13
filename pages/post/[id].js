@@ -61,13 +61,13 @@ function DetailNews({list}) {
                     </div>
         } else {
             content = <div
-                className="bg-white-300 mx-auto my-auto w-full h-full flex justify-center items-center fixed">
+                className="h-screen bg-white-300 mx-auto my-auto w-full flex justify-center items-center">
                 Mohon maaf, berita tidak di temukan.
             </div>
         }
     } else {
         content = <div
-            className="bg-white-300 mx-auto my-auto w-full h-full flex justify-center items-center fixed">
+            className="h-screen bg-white-300 mx-auto my-auto w-full flex justify-center items-center">
             loading...
         </div>
     }
