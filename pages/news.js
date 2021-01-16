@@ -1,7 +1,6 @@
 import style from '../components/news.module.scss'
 import {useRouter, withRouter} from 'next/router'
 import ReactPaginate from 'react-paginate';
-import Link from 'next/link'
 
 function News({news, count, currentPage}) {
 
@@ -21,9 +20,6 @@ function News({news, count, currentPage}) {
     const back = () => {
         router.push('/')
     }
-
-    console.log(news);
-    console.log(count);
 
     let content = null
     if (news.length > 0) {

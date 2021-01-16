@@ -63,7 +63,7 @@ function Search({parentCallback}) {
     } else {
         if (listSearch.length > 0) {
             content = listSearch.map((item, i) => {
-                let slug = item
+                let slug = item 
                     .title
                     .toLowerCase()
                     .replace(/ /g, "-");

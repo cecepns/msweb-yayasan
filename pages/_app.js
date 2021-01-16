@@ -26,9 +26,11 @@ function MyApp({Component, pageProps}) {
                     property="og:description"
                     content="SMP AL-Qur'an Ma'rifatussalaam adalah sekolah boarding terbaik di subang"/>
                 <meta property="og:url" content="https://marifatussalaam.org/"/>
+                <meta name="google-site-verification" content="yvqhaODts2WU2swOmyIziLY-q7A_6PI05PJjSOhIku0"/>
                 <meta
                     property="og:site_name"
                     content="SMP AL-QUR'AN MA'RIFATUSSALAAM BOARDING SCHOOL SUBANG"/>
+                    <meta name="google-site-verification" content="sxH3_hMu1xl9cWYaoq72sO2Uk23gLUB3gl4lo7Xw8mU" />
             </Head>
 
     <NextNprogress color="#e91e63" startPosition={0.3} stopDelayMs={200} height="3"/> 
