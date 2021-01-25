@@ -1,7 +1,6 @@
 import '../styles/index.css'
 import '../styles/globals.css'
 import Navbar from '../components/navbar'
-// import '../styles/Home.module.css'
 import NextNprogress from 'nextjs-progressbar';
 import Footer from '../components/footer'
 import Head from 'next/head'
@@ -10,7 +9,7 @@ import Head from 'next/head'
 function MyApp({Component, pageProps}) {
     return <> 
      <Head>
-                <title>SMP AL-QUR'AN MA'RIFATUSSALAAM (QURANIC BOARDING SCHOOL)
+                <title>YAYASAN MA'RIFATUSSALAAM (QURANIC BOARDING SCHOOL)
                 </title>
                 <link rel="icon" href="/logo_sekolah.png"/>
                 <meta
