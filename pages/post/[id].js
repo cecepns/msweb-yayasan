@@ -48,7 +48,7 @@ function DetailNews({list}) {
                                     className="w-auto"
                                     ></img>
                             </div>
-                            <p className="text-3xl py-5 font-bold">
+                            <p className="text-center text-3xl py-5 font-bold">
                                 {i.title.rendered}
                             </p>
                             <div className="lg:w-2/3"

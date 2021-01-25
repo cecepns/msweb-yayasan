@@ -6,7 +6,6 @@ function News({news}) {
 
     const router = useRouter();
 
-
     return (
         <div className="bg-gray-200 lg:px-12 py-8">
             <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 lg:text-center">
@@ -21,13 +20,18 @@ function News({news}) {
                 </p>
             </div>
             <div className="flex flex-wrap justify-center lg:justify-between lg:mb-4">
-                {news.length > 1 
+                {news.length > 1
                     ? news
                     // .sort((a, b) => {     return new Date(b.tanggal_berita) - new
                     // Date(a.tanggal_berita); })     .slice(0, 6)
                         .map(item => {
 
                         let isi = item.content.rendered;
+                        let title = item.title.rendered;
+
+                        if (title.length > 40) {
+                            title = title.substr(0, 40) + '[...]'
+                        }
                         if (isi.length > 100) {
                             isi = isi.substr(0, 100) + '[...]'
                         }
@@ -78,7 +82,7 @@ function News({news}) {
                                 </p>
 
                                 <p className={style.title}>
-                                    {item.title.rendered}
+                                    {title}
                                 </p>
 
                                 <div
@@ -91,7 +95,7 @@ function News({news}) {
                                     className={style.btnDetails}
                                     onClick={() => router.push({asPath: 'post/id', pathname: `post/${item.slug}`})}>
                                     Lihat selengkapnya
-                                    
+
                                 </button>
                             </div>
                         </div>
@@ -100,7 +104,8 @@ function News({news}) {
                     : <div className="mx-auto">
                         <p
                             className="my-4 max-w-2xl font-light text-lg text-center leading-7 text-red-500 opacity-75 lg:mx-auto">
-                            Mohon maaf gagal memuat berita, cek koneksi anda terlebih dahulu kemudian refresh halaman.
+                            Mohon maaf gagal memuat berita, cek koneksi anda terlebih dahulu kemudian
+                            refresh halaman.
                         </p>
                     </div>}
             </div>

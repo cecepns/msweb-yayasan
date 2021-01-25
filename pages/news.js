@@ -42,8 +42,13 @@ function News({news, count, currentPage}) {
                     .map(item => {
 
                     let isi = item.content.rendered;
+                    let title = item.title.rendered;
+
                     if (isi.length > 100) {
                         isi = isi.substr(0, 100) + '[...]'
+                    }
+                    if (title.length > 40) {
+                        title = title.substr(0, 40) + '[...]'
                     }
                     let datePart = item
                             .date
@@ -92,7 +97,7 @@ function News({news, count, currentPage}) {
                             </p>
 
                             <p className={style.title}>
-                                {item.title.rendered}
+                                {title}
                             </p>
 
                             <div
