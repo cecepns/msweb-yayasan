@@ -55,7 +55,7 @@ function Navbar() {
         <div className={style.wrapper}>
             <div className={style.logoWrapper}>
                 <Logo
-                    src="/ms.png"
+                    src="/logo_smp.png"
                     alt="Picture of the author"
                     width={250}
                     height={50}
