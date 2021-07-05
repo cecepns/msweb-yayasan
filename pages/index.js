@@ -27,7 +27,7 @@ function Home({posts}) {
     )
 }
 
-export async function getServerSideProps(context) {
+export async function getStaticProps(context) {
     const res = await fetch(`https://adminwp.marifatussalaam.org/wp-json/wp/v2/posts?per_page=3`)
     const data = await res.json()
     const posts = data
@@ -35,6 +35,7 @@ export async function getServerSideProps(context) {
         props: {
             posts
         }, // will be passed to the page component as props
+        revalidate:10,
     }
 }
 

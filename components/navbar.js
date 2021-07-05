@@ -1,7 +1,6 @@
 import style from './navbar.module.scss'
 import Link from 'next/link'
-import Logo from 'next/image'
-import {useState, useEffect} from 'react'
+import {useState} from 'react'
 import {useRouter} from 'next/router'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faSearch} from '@fortawesome/free-solid-svg-icons'
@@ -54,12 +53,7 @@ function Navbar() {
 
         <div className={style.wrapper}>
             <div className={style.logoWrapper}>
-                <Logo
-                    src="/logo_yayasan.png"
-                    alt="Picture of the author"
-                    width={250}
-                    height={50}
-                    className={style.logo}/>
+                <img src="/logo_yayasan.png" alt="picture of author"></img>
             </div>
 
             <div

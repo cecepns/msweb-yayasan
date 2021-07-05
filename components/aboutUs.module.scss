@@ -3,3 +3,9 @@
     overflow: hidden;
     filter: grayscale(1);
 }
+@media(min-width:768px) {
+    .AboutUs img {
+        min-width: 584px;
+        min-height: 470px;
+    }
+}

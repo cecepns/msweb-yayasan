@@ -1,5 +1,5 @@
 import style from './aboutUs.module.scss'
-import Image from 'next/image'
+// import Image from 'next/image'
 
 function AboutUs() {
     return (
@@ -36,12 +36,13 @@ function AboutUs() {
 
                     </div>
                     <div className={style.AboutUs}>
-                        <Image
+                        {/* <Image
                             alt="Picture of the author"
                             src="/pmb.png"
                             layout="responsive"
                             width={900}
-                            height={700}/>
+                            height={700}/> */}
+                            <img src="/pmb.png" alt="picture of the author"></img>
                     </div>
                 </div>
             </div>
