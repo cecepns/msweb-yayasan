@@ -4,7 +4,7 @@ function Footer() {
     return(
         
         <div className={style.footer}>
-            <p> &copy; SMP AL-Qur'an Ma'rifatussalaam </p>
+            <p> &copy; Yayasan Ma'rifatussalaam </p>
         </div>
     )
 }

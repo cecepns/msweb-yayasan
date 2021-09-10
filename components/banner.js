@@ -8,7 +8,7 @@ function Banner() {
         dots: false,
         lazyLoad: true,
         infinite: true,
-        speed: 1000,
+        speed: 3000,
         autoplay: true,
         autoplaySpeed: 8000,
         slidesToShow: 1,
@@ -17,9 +17,9 @@ function Banner() {
 
     const image = [
         {
-            src: "https://psb.marifatussalaam.org/assets/frontend/image/header2.png"
+            src: "https://psb.marifatussalaam.org/psb1/assets/frontend/image/header2.png"
         }, {
-            src: "https://psb.marifatussalaam.org/assets/frontend/image/header3.png"
+            src: "https://psb.marifatussalaam.org/psb1/assets/frontend/image/header3.png"
         }
     ];
 
