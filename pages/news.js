@@ -25,6 +25,14 @@ function News({news, count, currentPage}) {
     let content = null
     if (news.length > 0) {
         content = <div className="bg-gray-200 lg:px-12 pt-20 pb-5">
+            <Head>
+                <title>Berita - Ma'rifatussalaam</title>
+                <link rel="icon" href="/logo_sekolah.png"/>
+                <meta name="description" content="Berita - Ma'rifatussalaam"></meta>
+
+                <meta property="og:title" content="Berita Ma'rifatussalaam"/>
+
+            </Head>
             <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 lg:text-center">
                 <h3
                     className="mt-5 text-3xl tracking-wide leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl sm:leading-10">
@@ -77,18 +85,6 @@ function News({news, count, currentPage}) {
                     let ValueTgl = day + '/' + newMonth + '/' + year
 
                     return <div key={item.id} className={style.wrapper}>
-                         <Head>
-                                <title>{style.title} </title>
-                                <link rel="icon" href="/logo_sekolah.png"/>
-                                <meta
-                                    name="description"
-                                    content={style.title}></meta>
-
-                                <meta
-                                    property="og:title"
-                                    content={style.title}/>
-                        
-                            </Head>
                         <div className={style.imgWrap}>
                             <img
                                 src={`${item.featured_image.size_full}`}
@@ -163,16 +159,18 @@ function News({news, count, currentPage}) {
 
     return (
         <div>
-            {content} 
+            {content}
         </div>
     )
 }
 
 export async function getServerSideProps({query}) {
     const page = query.page || 1
-    
+
     const res = await fetch(`https://adminwp.marifatussalaam.org/wp-json/wp/v2/posts?per_page=3&page=${page}`)
-    const count = await res.headers.get('X-WP-Total')
+    const count = await res
+        .headers
+        .get('X-WP-Total')
     const news = await res.json();
 
     return {
