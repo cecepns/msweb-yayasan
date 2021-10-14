@@ -49,8 +49,6 @@ function DetailNews({list}) {
                                     name="description"
                                     content={i.title.rendered}></meta>
 
-                                <meta property="og:locale" content="en_US"/>
-                                <meta property="og:type" content="website"/>
                                 <meta
                                     property="og:title"
                                     content={i.title.rendered}/>
