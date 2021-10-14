@@ -1,6 +1,7 @@
 import style from '../components/news.module.scss'
 import {useRouter, withRouter} from 'next/router'
 import ReactPaginate from 'react-paginate';
+import Head from 'next/head'
 
 function News({news, count, currentPage}) {
 
@@ -76,6 +77,18 @@ function News({news, count, currentPage}) {
                     let ValueTgl = day + '/' + newMonth + '/' + year
 
                     return <div key={item.id} className={style.wrapper}>
+                         <Head>
+                                <title>{style.title} </title>
+                                <link rel="icon" href="/logo_sekolah.png"/>
+                                <meta
+                                    name="description"
+                                    content={style.title}></meta>
+
+                                <meta
+                                    property="og:title"
+                                    content={style.title}/>
+                        
+                            </Head>
                         <div className={style.imgWrap}>
                             <img
                                 src={`${item.featured_image.size_full}`}
