@@ -9,21 +9,12 @@ import Head from 'next/head'
 function MyApp({Component, pageProps}) {
     return <> 
      <Head>
-                <title>YAYASAN MA'RIFATUSSALAAM (QURANIC BOARDING SCHOOL)
-                </title>
+               
                 <link rel="icon" href="/logo_sekolah.png"/>
-                <meta
-                    name="description"
-                    content="Ma'rifatussalaam Qur'anic Boarding School adalah sekolang Boarding School terbaik di subang"></meta>
 
                 <meta property="og:locale" content="en_US"/>
                 <meta property="og:type" content="website"/>
-                <meta
-                    property="og:title"
-                    content="SMP AL-QUR'AN MA'RIFATUSSALAAM - TERDEPAN MENJADI SEKOLAH GENERASI BERKARAKTER QURANI"/>
-                <meta
-                    property="og:description"
-                    content="SMP AL-Qur'an Ma'rifatussalaam adalah sekolah boarding terbaik di subang"/>
+                
                 <meta property="og:url" content="https://marifatussalaam.org/"/>
                 <meta name="google-site-verification" content="yvqhaODts2WU2swOmyIziLY-q7A_6PI05PJjSOhIku0"/>
                 <meta
