@@ -1,6 +1,7 @@
 import React from 'react'
 import {useRouter} from 'next/router'
 import {useState, useEffect} from 'react'
+import Head from 'next/head'
 
 function DetailNews({list}) {
     // const router = useRouter() let detail = router.query console.log(router)
@@ -41,6 +42,20 @@ function DetailNews({list}) {
                     <div className="container mx-auto mt-20 py-10 px-5">
                     {data.map(i => {
                         return <div key={i.id} className="flex flex-col items-center">
+                             <Head>
+                                <title> Ekstra kurikuler - {i.title.rendered} </title>
+                                <link rel="icon" href="/logo_sekolah.png"/>
+                                <meta
+                                    name="description"
+                                    content={i.title.rendered}></meta>
+
+                                <meta property="og:locale" content="en_US"/>
+                                <meta property="og:type" content="website"/>
+                                <meta
+                                    property="og:title"
+                                    content={i.title.rendered}/>
+                        
+                            </Head>
                             <div>
                             <img
                                     src={`${i.featured_image.size_full}`}
