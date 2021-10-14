@@ -43,7 +43,7 @@ function DetailNews({list}) {
                     {data.map(i => {
                         return <div key={i.id} className="flex flex-col items-center">
                              <Head>
-                                <title> Ekstrakurikuler - {i.title.rendered} </title>
+                                <title>{i.title.rendered} </title>
                                 <link rel="icon" href="/logo_sekolah.png"/>
                                 <meta
                                     name="description"
