@@ -1,24 +1,31 @@
 import React from 'react'
-import {useRouter} from 'next/router'
-import {useState, useEffect} from 'react'
 import Head from 'next/head'
 
 
-export async function getServerSideProps(ctx) {
+export async function getStaticPaths() {
+    const response = await 
+                     fetch(`https://adminwp.marifatussalaam.org/wp-json/wp/v2/posts`),
+          listSlug = await response.json();
 
+    const paths = listSlug.map(data => ({
+        params: {slug : data.slug}
+    }))
 
-    const id = ctx.query.id
-    const response = await fetch(`https://adminwp.marifatussalaam.org/wp-json/wp/v2/posts?slug=${id}`);
-    const list = await response.json();
+    return {paths, fallback:true};
+}
+
+export async function getStaticProps({params}) {
+
+    const response = await 
+                     fetch(`https://adminwp.marifatussalaam.org/wp-json/wp/v2/posts?slug=${params.slug}`),
+          list = await response.json();
 
     return {
-        props: {
-            list: list
-        }
+        props: {list},
+        revalidate: 10
     }
 
 }
-
 
 function DetailNews({list}) {
 
