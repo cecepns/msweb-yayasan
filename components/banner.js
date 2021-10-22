@@ -17,9 +17,9 @@ function Banner() {
 
     const image = [
         {
-            src: "https://psb.marifatussalaam.org/psb1/assets/frontend/image/header2.png"
+            src: "https://adminwp.marifatussalaam.org/wp-content/uploads/2021/10/banner_1.png"
         }, {
-            src: "https://psb.marifatussalaam.org/psb1/assets/frontend/image/header3.png"
+            src: "https://adminwp.marifatussalaam.org/wp-content/uploads/2021/10/banner_2.png"
         }
     ];
 
