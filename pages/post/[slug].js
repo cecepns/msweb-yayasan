@@ -18,7 +18,7 @@ export async function getStaticProps({params}) {
 
     const response = await 
                      fetch(`https://adminwp.marifatussalaam.org/wp-json/wp/v2/posts?slug=${params.slug}`),
-          list = await response.json();
+          list     = await response.json();
 
     return {
         props: {list},
@@ -32,7 +32,7 @@ function DetailNews({list}) {
 
     let content = null
   
-        if (list.length > 0)
+        if (list)
          {
             content = 
                     <div className="container mx-auto mt-20 py-10 px-5">
@@ -77,9 +77,9 @@ function DetailNews({list}) {
    
 
     return (
-        <>
+        <main>
             {content}
-        </>
+        </main>
     )
 }
 
